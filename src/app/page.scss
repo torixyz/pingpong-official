@@ -1,0 +1,259 @@
+
+
+.home__wrapper {
+  position: relative;
+  overflow: hidden;
+}
+.first-invisible {
+  opacity: 0;
+  transition: opacity 2s;
+}
+.home__first-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 1;
+  transition: opacity 2s;
+}
+.home__logo {
+  position: absolute;
+  display: block;
+  width: 243px;
+  height: 210px;
+  left: 22px;
+  top: 17px;
+}
+.home__nav {
+  position: absolute;
+  height: 62px;
+  right: 40px;
+  top: 31px;
+  z-index: 1;
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+}
+.home__nav-item {
+  position: relative;
+  cursor: pointer;
+}
+.home__nav-item:hover .home__nav-item-img--active{
+  visibility: visible;
+}
+.home__nav-item:hover .home__nav-item-img{
+  visibility: hidden;
+}
+.home__nav-item-img {
+  width: auto;
+  height: 40px;
+}
+.home__nav-item-img--active {
+  position: absolute;;
+  top: -5px;
+  left: 0;
+  height: 58px;
+  visibility: hidden;
+}
+.home__service {
+  overflow: hidden;
+  position: relative;
+  margin-top: 160px;
+}
+.home__service-bg {
+  width: 100%;
+  height: auto;
+  visibility: hidden;
+}
+
+.home__service-btn {
+  position: absolute;
+  top: 630px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 526px;
+  height: 72px;
+  cursor: pointer;
+}
+.home__hook {
+  z-index: 2;
+  margin-top: -140px;
+  position: relative;
+  width: 100vw;
+  overflow: hidden;
+  // height: 1305px;
+  height: 1175px;
+}
+.home__hook-bg1 {
+  position: absolute;
+  top: 0;
+  left: 70px;
+  z-index: 10;
+  width: 718px;
+  height: auto;
+  max-width: none;
+}
+.home__hook-bg2 {
+  position: absolute;
+  bottom: 0;
+  left: 0;;
+  z-index: 13;
+  width: 100%;
+  max-width: none;
+}
+
+.home__hook-video {
+  position: absolute;
+  top: 90px;
+  right: 0;
+  height: 900px;
+  z-index: 9;
+}
+.home__hook-content {
+  left: 93px;
+  top: 410px;
+  position: absolute;
+  z-index: 12;
+  width: 765px;
+  height: 200px;
+  color: #000;
+}
+.home__hook-detail {
+  font-size: 36px;
+  line-height: 43px;
+}
+.home__hook-detail span {
+  color: #ED5B42;
+}
+.home__hook-soon {
+  margin-top: 23px;
+  color: #000;
+  font-size: 36px;
+  line-height: 43px;
+}
+.home__sdk {
+  z-index: 3;
+  margin-top: -130px;
+  position: relative;
+  width: 100vw;
+  overflow: hidden;
+  // padding-bottom: 700px;
+  height: 1840px;
+}
+.home__sdk-bg {
+  position: absolute;
+  width: 533px;
+  max-width: none;
+  left: 94px;
+  top: 0;
+}
+.home__sdk-video {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 400px
+}
+.home__sdk-content {
+  position: absolute;
+  left: 139px;
+  top: 300px;
+  z-index: 4;
+  font-size: 36px;
+  line-height: 43px;
+}
+.home__sdk-ul {
+  margin-top: 20px;
+  list-style: inside;
+}
+.home__sdk-soon {
+  margin-top: 23px;
+  color: #000;
+  font-size: 36px;
+  line-height: 43px;
+}
+.home__sdk-desc-box {
+  position: absolute;
+  left: 78px;
+  top: 1060px;
+  box-sizing: border-box;
+  padding: 0 85px;
+  width: 1284px;
+  height: 460px;
+  border-radius: 30px;
+  border: 5px solid #000;
+  font-size: 26px;
+  line-height: 30px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(248, 231, 201);
+}
+.home__sdk-desc-box span {
+  color: #ED5B42;
+}
+
+.home__footer {
+  // overflow: hidden;
+  position: absolute;
+  left: 78px;
+  top: 1610px;
+  box-sizing: border-box;
+  width: 1284px;
+  height: 110px;
+  border-radius: 30px;
+  border: 5px solid #000;
+  display: flex;
+  flex-direction: row;
+  background-color: rgb(248, 231, 201);
+}
+.home__footer-logo-box {
+  position: relative;
+  width: 237px;
+  border-right: 5px solid #000;
+}
+.home__footer-logo {
+  position: absolute;
+  left: -10px;
+  bottom: -30px;;
+  width: 237px;
+  height: auto;
+}
+.home__footer-nav {
+  width: 928px;
+  height: 100px;
+  margin-left: 70px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.home__footer-nav-item {
+  position: relative;
+  
+}
+.home__footer-nav-item:hover .home__footer-nav-item-img--active {
+  visibility: visible;
+}
+.home__footer-nav-item:hover .home__footer-nav-item-img {
+  visibility: hidden;
+}
+.home__footer-nav-item-img--active {
+  visibility: hidden;
+  position: absolute;
+  left: 0;
+  top: 0
+}
+.home__footer-nav img {
+  cursor: pointer;
+}
+.home__footer-nav div:nth-child(1) img,
+.home__footer-nav div:nth-child(2) img {
+  width: auto;
+  height: 43px;
+}
+.home__footer-nav div:nth-child(3) img,
+.home__footer-nav div:nth-child(4) img,
+.home__footer-nav div:nth-child(5) img {
+  width: auto;
+  height: 60px;
+}
