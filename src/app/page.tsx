@@ -178,7 +178,7 @@ export default function Home() {
             We encourage you to feel us, feel our passion, through our products
             and words. We are human-made and are cooking smth smth cool for
             humans, for you & your kids, for making democratizing the future of
-            compute a <span>dream come true</span>🪄.
+            compute a <span>dream come true</span>.🪄
           </div>
         </div>
         <div className="home__footer">
