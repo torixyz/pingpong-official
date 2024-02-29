@@ -126,7 +126,7 @@ export default function Home() {
         ></video>
         <div className="home__hook-content">
           <div className="home__hook-detail">
-            The world's first <span>DePIN liquidity aggregation protocol</span>.
+            The world&apos;s first <span>DePIN liquidity aggregation protocol</span>.
             Turning AI computational resources into a new form of DeFi
             liquidity. <br></br>
             <br></br>
@@ -172,7 +172,7 @@ export default function Home() {
             <br></br>
             However, please try to look beyond these labels on us. Labels are
             shortcuts to establishing authority and building blind trust, but
-            they don't help us humans to bond and your precious trust should not
+            they don&apos;t help us humans to bond and your precious trust should not
             be given for free.<br></br>
             <br></br>
             We encourage you to feel us, feel our passion, through our products
