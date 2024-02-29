@@ -6,18 +6,42 @@ import { useEffect, useRef } from "react";
 
 export default function Home() {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const videoBgRef = useRef<HTMLImageElement>(null);
+  const video2Ref = useRef<HTMLVideoElement>(null);
+  const video3Ref = useRef<HTMLVideoElement>(null);
+  const hasPlayed = useRef(false);
+  const isIos = () => {
+    const u = navigator.userAgent;
+    return !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
+  };
   useEffect(() => {
     if (videoRef.current) {
-      videoRef.current.ontimeupdate = (e) => {
-        const second = Math.floor(e.timeStamp / 1000);
-        if (videoRef.current && second === 6) {
-          const list: NodeListOf<HTMLElement> =
-            document.querySelectorAll(".first-invisible");
-          Array.from(list || []).forEach((item: HTMLElement) => {
-            item.style.opacity = "1";
-          });
+      if (isIos()) {
+        videoRef.current.style.opacity = "0";
+        if (videoBgRef.current) {
+          videoBgRef.current.style.opacity = "1";
         }
-      };
+        const list: NodeListOf<HTMLElement> =
+          document.querySelectorAll(".first-invisible");
+        Array.from(list || []).forEach((item: HTMLElement) => {
+          item.style.opacity = "1";
+        });
+      } else {
+        videoRef.current.style.opacity = "1";
+
+        videoRef.current.ontimeupdate = (e) => {
+          hasPlayed.current = true;
+
+          const second = Math.floor(e.timeStamp / 1000);
+          if (videoRef.current && second === 6) {
+            const list: NodeListOf<HTMLElement> =
+              document.querySelectorAll(".first-invisible");
+            Array.from(list || []).forEach((item: HTMLElement) => {
+              item.style.opacity = "1";
+            });
+          }
+        };
+      }
     }
   }, []);
   return (
@@ -29,6 +53,14 @@ export default function Home() {
         autoPlay={true}
         muted={true}
       ></video>
+      <Image
+        ref={videoBgRef}
+        className="home__first-bg"
+        width={5760}
+        height={4647}
+        src="/first_bg.png"
+        alt="bg"
+      ></Image>
       <Image
         className="home__logo first-invisible"
         width={243}
@@ -118,6 +150,7 @@ export default function Home() {
           className="home__hook-bg2"
         ></Image>
         <video
+          ref={video2Ref}
           className="home__hook-video"
           src="/second.mp4"
           autoPlay={true}
@@ -126,9 +159,9 @@ export default function Home() {
         ></video>
         <div className="home__hook-content">
           <div className="home__hook-detail">
-            The world&apos;s first <span>DePIN liquidity aggregation protocol</span>.
-            Turning AI computational resources into a new form of DeFi
-            liquidity. <br></br>
+            The world&apos;s first{" "}
+            <span>DePIN liquidity aggregation protocol</span>. Turning AI
+            computational resources into a new form of DeFi liquidity. <br></br>
             <br></br>
             Get the maximum <span>DePIN mining</span> yield from us!
           </div>
@@ -144,6 +177,7 @@ export default function Home() {
           className="home__sdk-bg"
         ></Image>
         <video
+          ref={video3Ref}
           className="home__sdk-video"
           src="/third.mp4"
           autoPlay={true}
@@ -172,8 +206,8 @@ export default function Home() {
             <br></br>
             However, please try to look beyond these labels on us. Labels are
             shortcuts to establishing authority and building blind trust, but
-            they don&apos;t help us humans to bond and your precious trust should not
-            be given for free.<br></br>
+            they don&apos;t help us humans to bond and your precious trust
+            should not be given for free.<br></br>
             <br></br>
             We encourage you to feel us, feel our passion, through our products
             and words. We are human-made and are cooking smth smth cool for

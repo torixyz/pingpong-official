@@ -6,15 +6,22 @@
 }
 .first-invisible {
   opacity: 0;
-  transition: opacity 2s;
+  // transition: opacity 2s;
+}
+.home__first-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
 }
 .home__first-video {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  opacity: 1;
-  transition: opacity 2s;
+  opacity: 0;
+  // transition: opacity 2s;
 }
 .home__logo {
   position: absolute;
