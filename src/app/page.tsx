@@ -94,7 +94,15 @@ export default function Home() {
         alt="logo"
       ></Image>
       <div className="home__nav first-invisible">
-        <div className="home__nav-item">
+        <div
+          className="home__nav-item"
+          onClick={() => {
+            const el = document.getElementById("js__product");
+            if (el) {
+              el.scrollIntoView({ behavior: "smooth" });
+            }
+          }}
+        >
           <Image
             src="/products.png"
             width={203}
@@ -168,7 +176,7 @@ export default function Home() {
           className="home__service-btn"
         ></Image>
       </div>
-      <div className="home__hook">
+      <div className="home__hook" id="js__product">
         {showFrame > 1 ? (
           <div className="animate__animated animate__fadeInUp">
             <Image
