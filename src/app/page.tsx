@@ -8,6 +8,8 @@ import "./page.scss";
 export default function Home() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const homeServiceRef = useRef<HTMLDivElement>(null);
+  const homeServiceBgRef = useRef<HTMLImageElement>(null);
+  const homeServiceSubscribeRef = useRef<HTMLImageElement>(null);
   const video2Ref = useRef<HTMLVideoElement>(null);
   const video3Ref = useRef<HTMLVideoElement>(null);
   const [showFrame, setShowFrame] = useState(1);
@@ -20,8 +22,11 @@ export default function Home() {
     if (videoRef.current) {
       if (isIos()) {
         videoRef.current.style.opacity = "0";
-        if (homeServiceRef.current) {
-          homeServiceRef.current.style.opacity = "1";
+        if (homeServiceBgRef.current) {
+          homeServiceBgRef.current.style.opacity = "1";
+        }
+        if (homeServiceSubscribeRef.current) {
+          homeServiceSubscribeRef.current.style.opacity = "1";
         }
         setShowFrame(3);
         const list: NodeListOf<HTMLElement> =
@@ -37,8 +42,8 @@ export default function Home() {
           if (videoRef.current) {
             videoRef.current.style.opacity = "0";
           }
-          if (homeServiceRef.current) {
-            homeServiceRef.current.style.opacity = "1";
+          if (homeServiceBgRef.current) {
+            homeServiceBgRef.current.style.opacity = "1";
           }
         };
 
@@ -50,6 +55,9 @@ export default function Home() {
           if (videoRef.current && second >= 6) {
             videoRef.current.ontimeupdate = null;
             setShowFrame(3);
+            if (homeServiceSubscribeRef.current) {
+              homeServiceSubscribeRef.current.style.opacity = "1";
+            }
 
             const list: NodeListOf<HTMLElement> =
               document.querySelectorAll(".first-invisible");
@@ -135,7 +143,7 @@ export default function Home() {
           ></Image>
         </div>
       </div>
-      <div className="home__service" ref={homeServiceRef}>
+      <div className="home__service">
         {/* <Image
           width={1920}
           height={1275}
@@ -144,6 +152,7 @@ export default function Home() {
           alt="bg1"
         ></Image> */}
         <Image
+          ref={homeServiceBgRef}
           className="home__service-bg"
           width={1920}
           height={1275}
@@ -151,6 +160,7 @@ export default function Home() {
           alt="bg"
         ></Image>
         <Image
+          ref={homeServiceSubscribeRef}
           alt="subscribe"
           width={526}
           height={72}
@@ -220,7 +230,9 @@ export default function Home() {
               src="/third.mp4"
               autoPlay={true}
               muted={true}
-            ></video>
+            >
+              {/* <source src="/third.webm" type="video/webm"></source> */}
+            </video>
             <div className="home__sdk-content">
               <ol className="home__sdk-ul">
                 We route requests based on -<li>Computation resource depth</li>

@@ -64,11 +64,11 @@
 .home__service {
   overflow: hidden;
   position: relative;
-  opacity: 0;
 }
 .home__service-bg {
   width: 100%;
   height: auto;
+  opacity: 0;
 }
 
 .home__service-btn {
@@ -79,6 +79,7 @@
   width: 530px;
   height: 88px;
   cursor: pointer;
+  opacity: 0;
 }
 .home__hook {
   z-index: 2;
