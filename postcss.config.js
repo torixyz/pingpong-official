@@ -5,7 +5,7 @@ module.exports = {
     tailwindcss: {},
     autoprefixer: {},
     'postcss-px-to-viewport-8-plugin': {
-      viewportWidth: 1440,
+      viewportWidth: 1920,
       unitPrecision: 4,
       viewportUnit: 'vw',
       minPixelValue: 1,
@@ -13,7 +13,7 @@ module.exports = {
     }
   },
   css: {
-    
+
   }
 
 };
