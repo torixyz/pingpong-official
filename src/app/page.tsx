@@ -75,7 +75,7 @@ export default function Home() {
       <video
         className="home__first-video"
         ref={videoRef}
-        src="/first.mp4"
+        src="/first.webm"
         autoPlay={true}
         muted={true}
       ></video>
@@ -195,7 +195,7 @@ export default function Home() {
             <video
               ref={video2Ref}
               className="home__hook-video"
-              src="/second.mp4"
+              src="/second.webm"
               autoPlay={true}
               muted={true}
               loop={true}
@@ -227,7 +227,7 @@ export default function Home() {
             <video
               ref={video3Ref}
               className="home__sdk-video"
-              src="/third.mp4"
+              src="/third.webm"
               autoPlay={true}
               muted={true}
             >
