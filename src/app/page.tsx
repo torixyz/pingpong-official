@@ -342,15 +342,15 @@ export default function Home() {
                   <Image
                     className="home__footer-nav-item-img"
                     src="/twitter-footer.png"
-                    width={30}
-                    height={30}
+                    width={80}
+                    height={80}
                     alt="products"
                   ></Image>
                   <Image
                     className="home__footer-nav-item-img--active"
                     src="/twitter-footer-active.png"
-                    width={30}
-                    height={30}
+                    width={80}
+                    height={80}
                     alt="products"
                   ></Image>
                 </Link>
