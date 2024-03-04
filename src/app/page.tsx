@@ -20,6 +20,13 @@ export default function Home() {
     return !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
   };
   useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+  }, []);
+  useEffect(() => {
     if (videoRef.current) {
       if (isIos()) {
         videoRef.current.style.opacity = "0";
@@ -301,16 +308,16 @@ export default function Home() {
                 >
                   <Image
                     className="home__footer-nav-item-img"
-                    src="/products-footer2.png"
-                    width={203}
-                    height={43}
+                    src="/products-footer.png"
+                    width={788}
+                    height={220}
                     alt="products"
                   ></Image>
                   <Image
                     className="home__footer-nav-item-img--active"
                     src="/product-footer-active.png"
-                    width={203}
-                    height={43}
+                    width={788}
+                    height={220}
                     alt="products"
                   ></Image>
                 </div>
@@ -322,15 +329,15 @@ export default function Home() {
                   <Image
                     className="home__footer-nav-item-img"
                     src="/whitepaper-footer.png"
-                    width={95}
-                    height={27}
+                    width={788}
+                    height={221}
                     alt="products"
                   ></Image>
                   <Image
                     className="home__footer-nav-item-img--active"
                     src="/whitepaper-footer-active.png"
-                    width={95}
-                    height={27}
+                    width={788}
+                    height={221}
                     alt="products"
                   ></Image>
                 </Link>
