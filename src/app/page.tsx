@@ -136,14 +136,16 @@ export default function Home() {
           src="/first_bg.png"
           alt="bg"
         ></Image>
-        <Image
-          ref={homeServiceSubscribeRef}
-          alt="subscribe"
-          width={526}
-          height={72}
-          src="/subscribe.png"
-          className="home__service-btn"
-        ></Image>
+        <Link href={"https://forms.gle/aDptNca4xz6yFZyg8"} target="_blank">
+          <Image
+            ref={homeServiceSubscribeRef}
+            alt="subscribe"
+            width={526}
+            height={72}
+            src="/subscribe.png"
+            className="home__service-btn"
+          ></Image>
+        </Link>
       </div>
       <div className="home__hook" id="js__product">
         {showFrame > 1 ? (
