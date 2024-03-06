@@ -126,7 +126,7 @@ export default function Home() {
           ></Image>
         </div>
         <Link
-          href={"/whitepaperV0.1.0_0304.pdf"}
+          href={"/PingpongWhitepaperV1.pdf"}
           target="_blank"
           className="home__nav-item"
         >
@@ -322,7 +322,7 @@ export default function Home() {
                   ></Image>
                 </div>
                 <Link
-                  href={"/whitepaperV0.1.0_0304.pdf"}
+                  href={"/PingpongWhitepaperV1.pdf"}
                   target="_blank"
                   className="home__footer-nav-item"
                 >
