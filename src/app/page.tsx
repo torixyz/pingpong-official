@@ -90,10 +90,13 @@ export default function Home() {
       <video
         className="home__first-video"
         ref={videoRef}
-        src="/first.webm"
+        // src="/first.mp4"
         autoPlay={true}
         muted={true}
-      ></video>
+      >
+        <source src="/first.webm" type="video/mp4"></source>
+        <source src="/first.mp4" type="video/mp4"></source>
+      </video>
       {/* <Image
         className="home__first-bg"
         width={1920}
@@ -220,11 +223,14 @@ export default function Home() {
             <video
               ref={video2Ref}
               className="home__hook-video"
-              src="/second.webm"
+              // src="/second.webm"
               autoPlay={true}
               muted={true}
               loop={true}
-            ></video>
+            >
+              <source src="/second.webm" type="video/mp4"></source>
+              <source src="/second.mp4" type="video/mp4"></source>
+            </video>
             <div className="home__hook-content">
               <div className="home__hook-detail">
                 The world&apos;s first{" "}
@@ -252,11 +258,12 @@ export default function Home() {
             <video
               ref={video3Ref}
               className="home__sdk-video"
-              src="/third.webm"
+              // src="/third.webm"
               autoPlay={true}
               muted={true}
             >
-              {/* <source src="/third.webm" type="video/webm"></source> */}
+              <source src="/third.webm" type="video/mp4"></source>
+              <source src="/third.mp4" type="video/mp4"></source>
             </video>
             <div className="home__sdk-content">
               <ol className="home__sdk-ul">
