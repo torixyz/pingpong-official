@@ -126,7 +126,7 @@ export default function Home() {
           ></Image>
         </div>
         <Link
-          href={"/PingpongWhitepaperV1.pdf"}
+          href={"/whitepaperV0.1.1.pdf"}
           target="_blank"
           className="home__nav-item"
         >
