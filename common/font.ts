@@ -10,3 +10,14 @@ export const LoveYaLikeASister = localFont({
   ],
   variable: "--font-LoveYaLikeASister",
 });
+
+export const Montserrat = localFont({
+  src: [
+    {
+      path: "../public/font/Montserrat/Montserrat-Regular.ttf",
+      weight: "400",
+      style: "normal",
+    },
+  ],
+  variable: "--font-Montserrat",
+});

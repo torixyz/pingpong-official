@@ -3,6 +3,16 @@
 .home__wrapper {
   position: relative;
   overflow: hidden;
+  // background-color: red;
+}
+.home__wrapper video {
+  display: none;
+}
+.is__mobile {
+
+}
+.is__pc video {
+  display: block;
 }
 .first-invisible {
   opacity: 0;
@@ -64,6 +74,7 @@
 .home__service {
   overflow: hidden;
   position: relative;
+  // background-color: red;
 }
 .home__service-bg {
   width: 100%;
