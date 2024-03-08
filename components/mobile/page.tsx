@@ -163,9 +163,9 @@ export default function Mobile() {
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;However,
             please try to look beyond these labels on us. Labels are shortcuts
-            to establishing authority and building blind trust, but they don't
-            help us humans to bond meaningfully and your precious trust should
-            not be given for free.
+            to establishing authority and building blind trust, but they
+            don&apos;t help us humans to bond meaningfully and your precious
+            trust should not be given for free.
           </div>
         </div>
         <Image
