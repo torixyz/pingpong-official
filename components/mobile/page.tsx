@@ -14,11 +14,31 @@ export default function Mobile() {
       }
     }
   };
+  const isOpen = function () {
+    const el = document.getElementById("js__mobile-header-box");
+    if (el) {
+      return el.classList.contains("mobile__header-box--open");
+    }
+    return false;
+  };
   const scrollToProduct = () => {
     const el = document.getElementById("js__product");
     if (el) {
       el.scrollIntoView({ behavior: "smooth" });
     }
+  };
+  const scrollTo = (id: string) => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
   };
   return (
     <div className="mobile__wrapper">
@@ -32,35 +52,46 @@ export default function Mobile() {
             src="/images/mobile/back.png"
           ></Image>
         </div>
-        <div className="mobile__header-box-2">
+        <div
+          className="mobile__header-box-2"
+          onClick={() => {
+            if (!isOpen()) return;
+            toggleMenu();
+            scrollToProduct();
+          }}
+        >
           <Image
-            onClick={() => {
-              toggleMenu();
-              scrollToProduct();
-            }}
             alt="product"
-            width={630}
-            height={155}
+            width={345}
+            height={114}
             src="/images/mobile/products.png"
           ></Image>
         </div>
-        <div className="mobile__header-box-3">
+        <div
+          className="mobile__header-box-3"
+          onClick={() => {
+            if (!isOpen()) return;
+            window.open("/whitepaperV0.1.1.pdf", "_blank");
+          }}
+        >
           <Image
-            onClick={() => window.open("/whitepaperV0.1.1.pdf", "_blank")}
             alt="whitepaper"
-            width={881}
-            height={194}
+            width={918}
+            height={233}
             src="/images/mobile/whitepaper.png"
           ></Image>
         </div>
-        <div className="mobile__header-box-4">
+        <div
+          className="mobile__header-box-4"
+          onClick={() => {
+            if (!isOpen()) return;
+            window.open("https://twitter.com/pingpongbuild", "_blank");
+          }}
+        >
           <Image
-            onClick={() =>
-              window.open("https://twitter.com/pingpongbuild", "_blank")
-            }
             alt="twitter"
-            width={881}
-            height={194}
+            width={282}
+            height={114}
             src="/images/mobile/twitter-header.png"
           ></Image>
         </div>
@@ -71,6 +102,13 @@ export default function Mobile() {
           src="/images/mobile/logo.png"
           className="mobile__header-logo"
           alt="logo"
+        ></Image>
+        <Image
+          width={592}
+          height={100}
+          src="/images/mobile/title.png"
+          className="mobile__header-title"
+          alt="title"
         ></Image>
         <div className="mobile__header-menu-box" onClick={() => toggleMenu()}>
           <div className="mobile__header-menu-item"></div>
@@ -100,6 +138,9 @@ export default function Mobile() {
           src="/images/mobile/bg1-2.png"
         ></Image>
         <Image
+          onClick={() => {
+            window.open("https://forms.gle/aDptNca4xz6yFZyg8", "_blank");
+          }}
           width={675}
           height={174}
           className="mobile__block-1-button"
@@ -141,6 +182,7 @@ export default function Mobile() {
           managers, and C-levels. Graduated from top universities etc etc.
         </div>
         <Image
+          onClick={() => scrollTo("js__block-5")}
           width={308}
           height={80}
           className="mobile__block-4-button"
@@ -149,7 +191,7 @@ export default function Mobile() {
         ></Image>
       </div>
       {/* block5 */}
-      <div className="mobile__block-5">
+      <div className="mobile__block-5" id="js__block-5">
         <Image
           width={674}
           height={488}
@@ -169,6 +211,7 @@ export default function Mobile() {
           </div>
         </div>
         <Image
+          onClick={() => scrollTo("js__block-6")}
           width={308}
           height={80}
           className="mobile__block-5-button"
@@ -177,7 +220,7 @@ export default function Mobile() {
         ></Image>
       </div>
       {/* block6 */}
-      <div className="mobile__block-6">
+      <div className="mobile__block-6" id="js__block-6">
         <Image
           width={674}
           height={488}
@@ -199,6 +242,7 @@ export default function Mobile() {
           </div>
         </div>
         <Image
+          onClick={() => scrollToTop()}
           width={556}
           height={120}
           className="mobile__block-6-button"

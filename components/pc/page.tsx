@@ -72,7 +72,6 @@ export default function Home() {
           hasPlayed.current = true;
 
           const second = Math.floor(e.timeStamp / 1000);
-          console.log("second", second, e.timeStamp);
           if (videoRef.current && second >= 6) {
             videoRef.current.ontimeupdate = null;
             setShowFrame(3);

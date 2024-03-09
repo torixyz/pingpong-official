@@ -12,6 +12,5 @@ export default function Home() {
   const headersList = headers();
   const userAgent = headersList.get("User-Agent");
   const _isMobile = isMobile(userAgent || "");
-  console.log("===isMobile", userAgent, _isMobile, 111);
   return <>{_isMobile ? <Mobile></Mobile> : <Pc></Pc>}</>;
 }
