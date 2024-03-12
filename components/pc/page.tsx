@@ -60,12 +60,12 @@ export default function Home() {
         videoRef.current.style.opacity = "1";
 
         videoRef.current.onended = () => {
-          if (videoRef.current) {
-            videoRef.current.style.opacity = "0";
-          }
-          if (homeServiceBgRef.current) {
-            homeServiceBgRef.current.style.opacity = "1";
-          }
+          // if (videoRef.current) {
+          //   videoRef.current.style.opacity = "0";
+          // }
+          // if (homeServiceBgRef.current) {
+          //   homeServiceBgRef.current.style.opacity = "1";
+          // }
         };
 
         videoRef.current.ontimeupdate = (e) => {
