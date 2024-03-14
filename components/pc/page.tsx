@@ -183,7 +183,7 @@ export default function Home() {
           src="/first_bg.png"
           alt="bg"
         ></Image>
-        <Link href={"https://forms.gle/aDptNca4xz6yFZyg8"} target="_blank">
+        <Link href={"https://twitter.com/pingpongbuild"} target="_blank">
           <Image
             ref={homeServiceSubscribeRef}
             alt="subscribe"

@@ -139,7 +139,7 @@ export default function Mobile() {
         ></Image>
         <Image
           onClick={() => {
-            window.open("https://forms.gle/aDptNca4xz6yFZyg8", "_blank");
+            window.open("https://twitter.com/pingpongbuild", "_blank");
           }}
           width={675}
           height={174}
