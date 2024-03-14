@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import "./page.scss";
+import {WHITEPAPER_LINK} from "@/config/link";
 
 export default function Mobile() {
   const toggleMenu = function () {
@@ -71,7 +72,7 @@ export default function Mobile() {
           className="mobile__header-box-3"
           onClick={() => {
             if (!isOpen()) return;
-            window.open("/whitepaperV0.1.1.pdf", "_blank");
+            window.open(WHITEPAPER_LINK, "_blank");
           }}
         >
           <Image

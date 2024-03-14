@@ -5,6 +5,7 @@ import Image from "next/image";
 import "animate.css";
 import "./page.scss";
 import Link from "next/link";
+import {WHITEPAPER_LINK} from "@/config/link";
 
 export default function Home() {
   const wrapperRef = useRef<HTMLDivElement>(null);
@@ -134,7 +135,7 @@ export default function Home() {
           ></Image>
         </div>
         <Link
-          href={"/whitepaperV0.1.1.pdf"}
+          href={WHITEPAPER_LINK}
           target="_blank"
           className="home__nav-item"
         >
@@ -331,7 +332,7 @@ export default function Home() {
                   ></Image>
                 </div>
                 <Link
-                  href={"/PingpongWhitepaperV1.pdf"}
+                  href={WHITEPAPER_LINK}
                   target="_blank"
                   className="home__footer-nav-item"
                 >
