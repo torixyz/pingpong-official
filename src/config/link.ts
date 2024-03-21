@@ -1,2 +1,1 @@
-
-export const WHITEPAPER_LINK = '/whitepaperV0.1.1.pdf'
+export const WHITEPAPER_LINK = "/PingPongWhitepaperV0.1.2.pdf";
