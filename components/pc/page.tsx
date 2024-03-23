@@ -5,7 +5,7 @@ import Image from "next/image";
 import "animate.css";
 import "./page.scss";
 import Link from "next/link";
-import {WHITEPAPER_LINK} from "@/config/link";
+import { WHITEPAPER_LINK } from "@/config/link";
 
 export default function Home() {
   const wrapperRef = useRef<HTMLDivElement>(null);
@@ -134,11 +134,7 @@ export default function Home() {
             alt="products"
           ></Image>
         </div>
-        <Link
-          href={WHITEPAPER_LINK}
-          target="_blank"
-          className="home__nav-item"
-        >
+        <Link href={WHITEPAPER_LINK} target="_blank" className="home__nav-item">
           <Image
             src="/whitepaper.png"
             width={203}
@@ -387,7 +383,11 @@ export default function Home() {
                     alt="products"
                   ></Image>
                 </div>
-                <div className="home__footer-nav-item">
+                <Link
+                  href={"https://discord.gg/zNA7MBmnFQ"}
+                  target="_blank"
+                  className="home__footer-nav-item"
+                >
                   <Image
                     className="home__footer-nav-item-img"
                     src="/reddit.png"
@@ -402,7 +402,7 @@ export default function Home() {
                     height={80}
                     alt="products"
                   ></Image>
-                </div>
+                </Link>
               </div>
             </div>
           </div>

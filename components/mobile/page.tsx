@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import "./page.scss";
-import {WHITEPAPER_LINK} from "@/config/link";
+import { WHITEPAPER_LINK } from "@/config/link";
 
 export default function Mobile() {
   const toggleMenu = function () {
@@ -279,6 +279,9 @@ export default function Mobile() {
               className="mobile__bottom-box-1-item"
             ></Image>
             <Image
+              onClick={() =>
+                window.open("https://discord.gg/zNA7MBmnFQ", "_blank")
+              }
               width={150}
               height={150}
               alt="reddit"
