@@ -384,7 +384,7 @@ export default function Home() {
                   ></Image>
                 </div>
                 <Link
-                  href={"https://discord.gg/zNA7MBmnFQ"}
+                  href={"https://discord.gg/3vYGdfDqvs"}
                   target="_blank"
                   className="home__footer-nav-item"
                 >

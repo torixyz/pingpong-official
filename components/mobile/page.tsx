@@ -280,7 +280,7 @@ export default function Mobile() {
             ></Image>
             <Image
               onClick={() =>
-                window.open("https://discord.gg/zNA7MBmnFQ", "_blank")
+                window.open("https://discord.gg/3vYGdfDqvs", "_blank")
               }
               width={150}
               height={150}
