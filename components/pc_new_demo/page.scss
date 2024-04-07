@@ -1,0 +1,60 @@
+.page {
+  width: 100vw;
+  overflow-x: hidden;
+}
+.whole_wrapper {
+  height: 100vh;
+  display: flex;
+  color: #000;
+}
+.whole {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #000;
+  flex-shrink: 0;
+}
+.frame_1 {
+
+  background-color: #ccc;
+}
+.frame_2 {
+
+
+}
+.frame_2_1 {
+
+  background-color: #999;
+}
+.frame_2_2 {
+
+  background-color: #666;
+}
+
+.frame_3_1 {
+  background-color: #f99;
+
+}
+.frame_3_2 {
+  background-color: #f66;
+}
+.frame_3_3 {
+  width: 60%;
+  background-color: #f36;
+
+}
+.frame_3_4 {
+  background-color: #f06;
+
+}
+.frame_5 {
+  display: flex;
+  flex-direction: column;
+}
+.frame_5_1 {
+  width: 180%;
+  height: 100px;
+  background-color: rgb(99, 34, 34);
+}
