@@ -222,7 +222,7 @@ export default function PcNewDemo() {
   return (
     <>
       <div className={"index__header " }>
-        <Image className="index__header-logo" width={600} height={203} src="/images/index_new/pc/logo.png"></Image>
+        <Image className="index__header-logo" width={600} height={203} alt="logo" src="/images/index_new/pc/logo.png"></Image>
         <div className="index__header-nav-list">
           {
             [
