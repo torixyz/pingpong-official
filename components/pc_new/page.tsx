@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Montserrat } from "../../common/font";
+import { Gobold } from "../../common/font";
 import Image from "next/image";
 import "animate.css";
 import "./page.scss";
@@ -96,10 +96,12 @@ export default function PcNewDemo() {
     return () => resizeObserver.disconnect(); // clean up 
   }, []);
 
+
   useGSAP(() => {
     // gsap code here...
     // frame2
     // console.log('frame2Ref', frame2Ref.current, frame2Ref.current?.scrollWidth, frame2Ref.current?.offsetHeight)
+    
     console.log('===3', -frame2Width + document.documentElement.clientWidth)
     gsap.to(".frame-2", {
       x: frame2Width ? (-frame2Width + document.documentElement.clientWidth) + 'px' : "-210vw",
@@ -187,7 +189,7 @@ export default function PcNewDemo() {
     }).to('.frame-6__content-main', {
       y: "-" + frame6ContentHeight * 1.1 + 'px',
     }).to('.frame-6__content-box', {
-      y: "-" + (frame6BgHeight - frame6Height) + 'px',
+      y: "-" + (frame6BgHeight - frame6Height - 30) + 'px',
 
     });
     // gsap.to(".frame-6__content-bg", {
@@ -201,7 +203,7 @@ export default function PcNewDemo() {
     //     markers: true,
     //   },
     // });
-  }, {dependencies: [frame2Width, frame3Width, frame6Height, frame6BgHeight, frame6ContentHeight]});
+  }, {dependencies: [ frame2Width, frame3Width, frame6Height, frame6BgHeight, frame6ContentHeight]});
 
   useEffect(() => {
     if (videoRef.current) {
@@ -243,7 +245,7 @@ export default function PcNewDemo() {
         </div>
 
       </div>
-      <div className={"page " + Montserrat.className}>
+      <div className={"page " + Gobold.className}>
         <div className="whole-x frame-1">
           <video
             style={{
@@ -262,7 +264,7 @@ export default function PcNewDemo() {
             <div className="frame-1__footer-content">
               <div className="frame-1__footer-content-description">DePIN light node mining aggregator beta version released! 🚀</div>
               <div className="frame-1__footer-content-button-box">
-                <div className="frame-1__footer-content-button">Unlock #DePINFi with PINGPONG!
+                <div className="frame-1__footer-content-button">Unlock a Basket of DePIN Earnings with a click!
                   <Image width={216} height={203} alt={'pointer'} src="/images/index_new/pc/point.png" className="frame-1__footer-content-button-pointer"></Image>
                 </div>
               </div>
@@ -297,15 +299,15 @@ export default function PcNewDemo() {
                 {
                   [{
                     content: frame22Content1,
-                    description: 'Connect to multiple DePIN networks with a single click! Make your idle assets work and earn for you!'
+                    description: 'PINGPONG supports multiple DePIN networks mining running concurrently with a single click of button.'
                   }, {
                     content: frame22Content2,
-                    description: 'Supporting all device types to turn idle assets into gold! '
+                    description: 'A wide range of supported device types allows you to mine the new goldmine with all your devices! '
                   }, {
                     content: frame22Content3,
-                    description: 'Our dynamic DePIN mining algorithm maximizes your yield by expanding network connections and auto-switching for optimal earnings!'
+                    description: 'Our dynamic DePIN mining algorithm maximizes your overall yield by expanding network connections and auto-switching to different DePIN networks!'
                   }].map((item, index) => (
-                    <div className="frame-2-2__content-list-item" key={index} onClick={() => setFrame22ActiveContentIndex(index)}>
+                    <div className="frame-2-2__content-list-item" key={index} onMouseOver={() => setFrame22ActiveContentIndex(index)}>
                       <div className="frame-2-2__content-list-item-description">{item.description}</div>
                       {
                         frame22ActiveContentIndex === index ? (
@@ -378,7 +380,7 @@ export default function PcNewDemo() {
               </div>
             </div>
           </div>
-          <div className="whole__y frame-3-2">
+          <div className="frame-3-2">
             <Image width={3840} height={800} className="frame-3-2__title" alt="frame title" src="/images/index_new/pc/frame3_2_title.png"></Image>
             <Image width={2490} height={692} className="frame-3-2__content" alt="frame title" src="/images/index_new/pc/frame3_2_content.png"></Image>
             <div className="frame-3-2__button-box">

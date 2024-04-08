@@ -21,3 +21,14 @@ export const Montserrat = localFont({
   ],
   variable: "--font-Montserrat",
 });
+
+export const Gobold = localFont({
+  src: [
+    {
+      path: "../public/font/Gobold/Gobold Regular.otf",
+      weight: "400",
+      style: "normal",
+    },
+  ],
+  variable: "--font-Gobold",
+});
