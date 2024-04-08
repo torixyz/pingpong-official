@@ -1,5 +1,5 @@
 import { headers } from "next/headers";
-import Pc from "../../components/pc/page";
+import Pc from "../../components/pc_new/page";
 import Mobile from "../../components/mobile/page";
 
 const isMobile = (userAgent: string) => {
