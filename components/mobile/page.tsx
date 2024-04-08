@@ -3,7 +3,10 @@ import Image from "next/image";
 import "./page.scss";
 import { WHITEPAPER_LINK } from "@/config/link";
 
+import { useState } from "react";
+
 export default function Mobile() {
+  const [isModalOpen, setModalOpen] = useState(false);
   const toggleMenu = function () {
     const el = document.getElementById("js__mobile-header-box");
     if (el) {
@@ -132,125 +135,128 @@ export default function Mobile() {
           src="/images/mobile/bg1-1.png"
         ></Image>
         <Image
-          width={332}
-          height={644}
+          width={719}
+          height={1386}
           className="mobile__block-1-bg-2"
           alt="bg"
-          src="/images/mobile/bg1-2.png"
-        ></Image>
-        <Image
-          onClick={() => {
-            window.open("https://twitter.com/pingpongbuild", "_blank");
-          }}
-          width={675}
-          height={174}
-          className="mobile__block-1-button"
-          alt="button"
-          src="/images/mobile/button1.png"
+          src="/images/index_new/mobile/bg1_2.png"
         ></Image>
       </div>
-      <div className="mobile__block-2" id="js__product">
+      <div className="mobile__block1-box1">
         <Image
-          width={740}
-          height={1670}
-          className="mobile__block-2-bg-1"
+          width={786}
+          height={280}
+          className="mobile__common-img"
           alt="bg"
-          src="/images/mobile/bg2.png"
+          src="/images/index_new/mobile/frame1_footer.png"
         ></Image>
+        <div className="mobile__block1-button1" onClick={() => {
+          setModalOpen(true)
+        }}></div>
       </div>
-      <div className="mobile__block-3">
+      <Image
+        width={1179}
+        height={1397}
+        className="mobile__common-img"
+        alt="content"
+        src="/images/index_new/mobile/1_01.png"
+      ></Image>
+      <Image
+        width={1179}
+        height={1158}
+        className="mobile__common-img"
+        alt="content"
+        src="/images/index_new/mobile/1_02.png"
+      ></Image>
+      <div className="mobile__common-box">
         <Image
-          width={740}
-          height={1435}
-          className="mobile__block-3-bg-1"
-          alt="bg"
-          src="/images/mobile/bg3.png"
+          width={1179}
+          height={1966}
+          className="mobile__common-img"
+          alt="content"
+          src="/images/index_new/mobile/1_03.png"
         ></Image>
+        <div className="mobile__1_03_button" onClick={() => setModalOpen(true)}></div>
       </div>
-      <div className="mobile__block-4">
-        <Image
-          width={674}
-          height={488}
-          className="mobile__block-4-bg-1"
-          alt="bg"
-          src="/images/mobile/bg4.png"
-        ></Image>
-        <div className="mobile__block-4-content-box">
-          {/* &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */}
-          &nbsp;&nbsp; We are a bunch of pro-human degens with work experience
-          at tech giants, top DeFi protocols, super well-funded Layer1 chain,
-          and crypto funds & trading prop shop, as founding team members, senior
-          managers, and C-levels. Graduated from top universities etc etc.
-        </div>
-        <Image
-          onClick={() => scrollTo("js__block-5")}
-          width={308}
-          height={80}
-          className="mobile__block-4-button"
-          alt="button"
-          src="/images/mobile/button4.png"
-        ></Image>
-      </div>
-      {/* block5 */}
-      <div className="mobile__block-5" id="js__block-5">
-        <Image
-          width={674}
-          height={488}
-          className="mobile__block-5-bg-1"
-          alt="bg"
-          src="/images/mobile/bg5.png"
-        ></Image>
-        <div className="mobile__block-5-content-box">
-          <div className="mobile__block-5-content">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;However,
-            please try to look beyond these labels on us. Labels are shortcuts
-            to establishing authority and building blind trust, but they
-            don&apos;t help us humans to bond meaningfully and your precious
-            trust should not be given for free.
-          </div>
-        </div>
-        <Image
-          onClick={() => scrollTo("js__block-6")}
-          width={308}
-          height={80}
-          className="mobile__block-5-button"
-          alt="button"
-          src="/images/mobile/button4.png"
-        ></Image>
-      </div>
-      {/* block6 */}
-      <div className="mobile__block-6" id="js__block-6">
-        <Image
-          width={674}
-          height={488}
-          className="mobile__block-6-bg-1"
-          alt="bg"
-          src="/images/mobile/bg6.png"
-        ></Image>
-        <div className="mobile__block-6-content-box">
-          <div className="mobile__block-6-content-1">
-            We encourage you to feel us,
-          </div>
-          <div className="mobile__block-6-content-2">
-            feel our passion, through our products and words.
-          </div>
-          <div className="mobile__block-6-content-3">
-            We are human-made and are cooking smth smth cool for humans, for you
-            & your kids, for making democratizing the future of compute a dream
-            come true.
-          </div>
-        </div>
-        <Image
-          onClick={() => scrollToTop()}
-          width={556}
-          height={120}
-          className="mobile__block-6-button"
-          alt="button"
-          src="/images/mobile/button6.png"
-        ></Image>
-      </div>
+      <Image
+        width={1179}
+        height={1300}
+        className="mobile__common-img"
+        alt="content"
+        src="/images/index_new/mobile/1_04.png"
+      ></Image>
+      <Image
+        width={1179}
+        height={1769}
+        className="mobile__common-img"
+        alt="content"
+        src="/images/index_new/mobile/1_05.png"
+      ></Image>
+      <Image
+        width={1179}
+        height={1826}
+        className="mobile__common-img"
+        alt="content"
+        src="/images/index_new/mobile/2_01.png"
+      ></Image>
+      <Image
+        width={1179}
+        height={1197}
+        className="mobile__common-img"
+        alt="content"
+        src="/images/index_new/mobile/2_02.png"
+      ></Image>
+      <Image
+        width={1179}
+        height={1379}
+        className="mobile__common-img"
+        alt="content"
+        src="/images/index_new/mobile/2_03.png"
+      ></Image>
+      <Image
+        width={1179}
+        height={1263}
+        className="mobile__common-img"
+        alt="content"
+        src="/images/index_new/mobile/2_04.png"
+      ></Image>
+      <Image
+        width={1179}
+        height={2021}
+        className="mobile__common-img"
+        alt="content"
+        src="/images/index_new/mobile/2_05.png"
+      ></Image>
+      <Image
+        width={1179}
+        height={1986}
+        className="mobile__common-img"
+        alt="content"
+        src="/images/index_new/mobile/3.png"
+      ></Image>
+      <Image
+        width={1179}
+        height={2229}
+        className="mobile__common-img"
+        alt="content"
+        src="/images/index_new/mobile/4.png"
+      ></Image>
+      <Image
+        width={1179}
+        height={2556}
+        className="mobile__common-img"
+        alt="content"
+        src="/images/index_new/mobile/5.png"
+      ></Image>
+    
+      <Image
+        onClick={() => scrollToTop()}
+        width={556}
+        height={120}
+        className="mobile__block-6-button"
+        alt="button"
+        src="/images/mobile/button6.png"
+      ></Image>
       <div className="mobile__bottom-block">
         <Image
           width={481}
@@ -294,6 +300,25 @@ export default function Mobile() {
           <div className="mobile__bottom-box-4"></div>
         </div>
       </div>
+      {
+        isModalOpen ? (
+          <div className="modal__wrapper">
+            <div className="modal__mask" onClick={() => {
+              setModalOpen(false)
+            }}>
+            </div>
+            <div className="modal__content">
+              <Image
+                width={786}
+                height={128}
+                alt="toast"
+                src="/images/index_new/mobile/toast.png"
+                className="mobile__block1-toast"
+              ></Image>
+            </div>
+          </div>
+        ) : null
+      }
     </div>
   );
 }

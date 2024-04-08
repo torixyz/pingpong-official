@@ -9,6 +9,8 @@ import Image from "next/image";
 import "animate.css";
 import "./page.scss";
 
+import { Twitter, Discord, WhitePaper, Medium } from "../../common/constants";
+
 import products from '@/../public/images/index_new/pc/products.png'
 import productsActive from '@/../public/images/index_new/pc/products-active.png'
 import about from '@/../public/images/index_new/pc/about.png'
@@ -112,7 +114,7 @@ export default function PcNewDemo() {
         end: "+=300%",
         scrub: true,
         pin: true,
-        markers: true,
+        markers: false,
       },
     });
 
@@ -124,7 +126,7 @@ export default function PcNewDemo() {
         end: "+=300%",
         scrub: true,
         pin: true,
-        markers: true,
+        markers: false,
       },
     });
     gsap.to(".frame-2-3__content-item--3", {
@@ -135,7 +137,7 @@ export default function PcNewDemo() {
         end: "+=300%",
         scrub: true,
         pin: true,
-        markers: true,
+        markers: false,
       },
     });
 
@@ -148,7 +150,7 @@ export default function PcNewDemo() {
         end: "+=400%",
         scrub: true,
         pin: true,
-        markers: true,
+        markers: false,
       },
     });
     gsap.to(".frame-5__content-main", {
@@ -159,7 +161,7 @@ export default function PcNewDemo() {
         end: "+=80%",
         scrub: true,
         pin: true,
-        markers: true,
+        markers: false,
       },
     });
 
@@ -184,7 +186,7 @@ export default function PcNewDemo() {
         end: "+=" + frame6ContentHeight * 1.5 ,
         scrub: true,
         pin: true,
-        markers: true,
+        markers: false,
       },
     }).to('.frame-6__content-main', {
       y: "-" + frame6ContentHeight * 1.1 + 'px',
@@ -223,27 +225,179 @@ export default function PcNewDemo() {
 
   return (
     <>
-      <div className={"index__header " }>
-        <Image className="index__header-logo" width={600} height={203} alt="logo" src="/images/index_new/pc/logo.png"></Image>
+      <div className={"index__header "}>
+        <Image
+          className="index__header-logo"
+          width={519}
+          height={112}
+          alt="logo"
+          src="/images/index_new/pc/logo.png"
+        ></Image>
         <div className="index__header-nav-list">
-          {
-            [
-              { name: 'products', src: products, activeSrc: productsActive, link: "https://pingpong.finance/launch" },
-              { name: 'about',src: about, activeSrc: aboutActive, link: "https://pingpong.finance/about" },
-              { name: 'white paper',src: whitepaper, activeSrc: whitepaperActive, link: "https://pingpong.finance/whitepaper" },
-            ].map((item) => (
-              <div className="index__header-nav-item" key={item.name}>
-                <Image src={item.src} height={140} alt={item.name} className="index__header-nav-item-image"></Image>
-                <Image src={item.activeSrc} height={140} alt={item.name} className="index__header-nav-item-image--active"></Image>
-              </div>))
-          }
-
+          {[
+            {
+              name: "products",
+              src: products,
+              activeSrc: productsActive,
+              link: "https://pingpong.finance/launch",
+            },
+            {
+              name: "about",
+              src: about,
+              activeSrc: aboutActive,
+              link: "https://pingpong.finance/about",
+            },
+            {
+              name: "white paper",
+              src: whitepaper,
+              activeSrc: whitepaperActive,
+              link: "https://pingpong.finance/whitepaper",
+            },
+          ].map((item, index) => (
+            <div className="index__header-nav-item" key={item.name}>
+              <Image
+                src={item.src}
+                height={140}
+                alt={item.name}
+                className="index__header-nav-item-image"
+              ></Image>
+              <Image
+                src={item.activeSrc}
+                height={140}
+                alt={item.name}
+                className="index__header-nav-item-image--active"
+              ></Image>
+              {index === 0 ? (
+                <div className="index__header-nav-dropdown" onClick={(e) => {
+                  e.stopPropagation();
+                }}>
+                  <Image
+                    src="/images/index_new/pc/header_product_dropdown.png"
+                    width={1044}
+                    height={812}
+                    alt={"dropdown"}
+                    className="index__header-nav-dropdown-1-bg"
+                  ></Image>
+                  <Image
+                    src="/images/index_new/pc/header_product_dropdown_button.png"
+                    width={704}
+                    height={134}
+                    alt={"dropdown"}
+                    className="index__header-nav-dropdown-1-button"
+                    onClick={(e) => {
+                      window.open('https://goldminer.pingpong.build/login', '_blank');
+                      e.stopPropagation();
+                    }}
+                  ></Image>
+                </div>
+              ) : null}
+              {index === 1 ? (
+                <div className="index__header-nav-dropdown" onClick={(e) => {
+                  e.stopPropagation();
+                }}>
+                  <Image
+                    src="/images/index_new/pc/header_community_dropdown.png"
+                    width={1044}
+                    height={812}
+                    alt={"dropdown"}
+                    className="index__header-nav-dropdown-2-bg"
+                  ></Image>
+                  <Image
+                    src="/images/index_new/pc/header_community_dropdown_button1.png"
+                    width={636}
+                    height={104}
+                    alt={"dropdown"}
+                    className="index__header-nav-dropdown-2-button1"
+                    onClick={(e) => {
+                      window.open(Discord, '_blank');
+                      e.stopPropagation();
+                    }}
+                  ></Image>
+                  <Image
+                    src="/images/index_new/pc/header_community_dropdown_button2.png"
+                    width={636}
+                    height={104}
+                    alt={"dropdown"}
+                    className="index__header-nav-dropdown-2-button2"
+                    onClick={(e) => {
+                      window.open(Twitter, '_blank');
+                      e.stopPropagation();
+                    }}
+                  ></Image>
+                  <Image
+                    src="/images/index_new/pc/header_community_dropdown_button3.png"
+                    width={636}
+                    height={104}
+                    alt={"dropdown"}
+                    className="index__header-nav-dropdown-2-button3"
+                    onClick={(e) => {
+                      window.open(Medium, '_blank');
+                      e.stopPropagation();
+                    }}
+                  ></Image>
+                </div>
+              ) : null}
+              {index === 2 ? (
+                <div className="index__header-nav-dropdown" onClick={(e) => {
+                  e.stopPropagation();
+                }}>
+                  <Image
+                    src="/images/index_new/pc/header_community_dropdown.png"
+                    width={1044}
+                    height={812}
+                    alt={"dropdown"}
+                    className="index__header-nav-dropdown-2-bg"
+                  ></Image>
+                  <Image
+                    src="/images/index_new/pc/header_about_dropdown_button1.png"
+                    width={636}
+                    height={104}
+                    alt={"dropdown"}
+                    className="index__header-nav-dropdown-2-button1"
+                    onClick={(e) => {
+                      window.open(Discord, '_blank');
+                      e.stopPropagation();
+                    }}
+                  ></Image>
+                  <Image
+                    src="/images/index_new/pc/header_about_dropdown_button2.png"
+                    width={636}
+                    height={104}
+                    alt={"dropdown"}
+                    className="index__header-nav-dropdown-2-button2"
+                    onClick={(e) => {
+                      window.open(WhitePaper, '_blank');
+                      e.stopPropagation();
+                    }}
+                  ></Image>
+                  <Image
+                    src="/images/index_new/pc/header_about_dropdown_button3.png"
+                    width={636}
+                    height={104}
+                    alt={"dropdown"}
+                    className="index__header-nav-dropdown-2-button3"
+                    onClick={(e) => {
+                      // window.open('https://goldminer.pingpong.build/login', '_blank');
+                      e.stopPropagation();
+                    }}
+                  ></Image>
+                </div>
+              ) : null}
+            </div>
+          ))}
         </div>
-        <div className="index__header-launch" >
-          <Image className="index__header-launch-image" src={launch} alt="launch"></Image>
-          <Image className="index__header-launch-image--active" src={launchActive} alt="launch"></Image>
+        <div className="index__header-launch">
+          <Image
+            className="index__header-launch-image"
+            src={launch}
+            alt="launch"
+          ></Image>
+          <Image
+            className="index__header-launch-image--active"
+            src={launchActive}
+            alt="launch"
+          ></Image>
         </div>
-
       </div>
       <div className={"page " + Gobold.className}>
         <div className="whole-x frame-1">
@@ -256,16 +410,34 @@ export default function PcNewDemo() {
             autoPlay={true}
             muted={true}
           >
-            <source src="/images/index_new/pc/video_1.mp4" type="video/mp4"></source>
+            <source
+              src="/images/index_new/pc/video_1.mp4"
+              type="video/mp4"
+            ></source>
             {/* <source src="/first.mp4" type="video/mp4"></source> */}
           </video>
           <div className="frame-1__footer" ref={frame1FooterRef}>
-            <Image width={3840} height={400} src="/images/index_new/pc/frame_1_footer.png" alt="frame one footer" className="frame-1__footer-image" />
+            <Image
+              width={3840}
+              height={400}
+              src="/images/index_new/pc/frame_1_footer.png"
+              alt="frame one footer"
+              className="frame-1__footer-image"
+            />
             <div className="frame-1__footer-content">
-              <div className="frame-1__footer-content-description">DePIN light node mining aggregator beta version released! 🚀</div>
+              <div className="frame-1__footer-content-description">
+              depin mining aggregator - light node beta version released! 🚀
+              </div>
               <div className="frame-1__footer-content-button-box">
-                <div className="frame-1__footer-content-button">Unlock a Basket of DePIN Earnings with a click!
-                  <Image width={216} height={203} alt={'pointer'} src="/images/index_new/pc/point.png" className="frame-1__footer-content-button-pointer"></Image>
+                <div className="frame-1__footer-content-button">
+                Unlock #DePINFi with PINGPONG!
+                  <Image
+                    width={216}
+                    height={203}
+                    alt={"pointer"}
+                    src="/images/index_new/pc/point.png"
+                    className="frame-1__footer-content-button-pointer"
+                  ></Image>
                 </div>
               </div>
             </div>
@@ -273,183 +445,462 @@ export default function PcNewDemo() {
         </div>
         <div className="whole__wrapper frame-2" ref={frame2Ref}>
           <div className="whole__y frame-2-1">
-            <Image width={3860} height={2316} className="frame-2-1__bg" alt="frame background" src="/images/index_new/pc/book-texture-bg.png"></Image>
-            <Image width={1092} height={256} className="frame-2-1__title" alt="frame title" src="/images/index_new/pc/frame2_product_title.png"></Image>
+            <Image
+              width={3860}
+              height={2316}
+              className="frame-2-1__bg"
+              alt="frame background"
+              src="/images/index_new/pc/book-texture-bg.png"
+            ></Image>
+            <Image
+              width={1092}
+              height={256}
+              className="frame-2-1__title"
+              alt="frame title"
+              src="/images/index_new/pc/frame2_product_title.png"
+            ></Image>
             <video
               className="frame-2-1__video"
               loop={true}
               autoPlay={true}
               muted={true}
             >
-              <source src="/images/index_new/pc/video_2_chrome.webm" type="video/mp4"></source>
-              <source src="/images/index_new/pc/video_2_safari.mp4" type="video/mp4"></source>
+              <source
+                src="/images/index_new/pc/video_2_chrome.webm"
+                type="video/mp4"
+              ></source>
+              <source
+                src="/images/index_new/pc/video_2_safari.mp4"
+                type="video/mp4"
+              ></source>
             </video>
-            <Image width={1918} height={800} className="frame-2-1__right1" alt="frame right" src="/images/index_new/pc/frame2_right1.png"></Image>
-            <Image width={1718} height={400} className="frame-2-1__right2" alt="frame right" src="/images/index_new/pc/frame2_right2.png"></Image>
+            <Image
+              width={1918}
+              height={800}
+              className="frame-2-1__right1"
+              alt="frame right"
+              src="/images/index_new/pc/frame2_right1.png"
+            ></Image>
+            <Image
+              width={1718}
+              height={400}
+              className="frame-2-1__right2"
+              alt="frame right"
+              src="/images/index_new/pc/frame2_right2.png"
+            ></Image>
             <div className="frame-2-1__right3-box">
-              <Image width={1290} height={465} className="frame-2-1__right3" alt="frame right" src="/images/index_new/pc/frame2_right3.png"></Image>
+              <Image
+                width={1290}
+                height={465}
+                className="frame-2-1__right3"
+                alt="frame right"
+                src="/images/index_new/pc/frame2_right3.png"
+              ></Image>
               <div className="frame-2-1__right3-click-area"></div>
             </div>
-
           </div>
           <div className="whole__y frame-2-2">
-            <Image width={3840} height={800} className="frame-2-2__title" alt="frame title" src="/images/index_new/pc/frame2_2_title.png"></Image>
+            <Image
+              width={3840}
+              height={800}
+              className="frame-2-2__title"
+              alt="frame title"
+              src="/images/index_new/pc/frame2_2_title.png"
+            ></Image>
             <div className="frame-2-2__content">
               <div className="frame-2-2__content-list">
-                {
-                  [{
+                {[
+                  {
                     content: frame22Content1,
-                    description: 'PINGPONG supports multiple DePIN networks mining running concurrently with a single click of button.'
-                  }, {
+                    description:
+                      "PINGPONG supports multiple DePIN networks mining running concurrently with a single click of button.",
+                  },
+                  {
                     content: frame22Content2,
-                    description: 'A wide range of supported device types allows you to mine the new goldmine with all your devices! '
-                  }, {
+                    description:
+                      "A wide range of supported device types allows you to mine the new goldmine with all your devices! ",
+                  },
+                  {
                     content: frame22Content3,
-                    description: 'Our dynamic DePIN mining algorithm maximizes your overall yield by expanding network connections and auto-switching to different DePIN networks!'
-                  }].map((item, index) => (
-                    <div className="frame-2-2__content-list-item" key={index} onMouseOver={() => setFrame22ActiveContentIndex(index)}>
-                      <div className="frame-2-2__content-list-item-description">{item.description}</div>
-                      {
-                        frame22ActiveContentIndex === index ? (
-                          <Image 
-                            src={item.content}
-                            width={2700}
-                            height={0}
-                            alt="content"
-                            className={"frame-2-2__content-list-item-content frame-2-2__content-list-item-content--" + (index + 1)}
-                          ></Image>
-                        ) : null
-                      }
+                    description:
+                      "Our dynamic DePIN mining algorithm maximizes your overall yield by expanding network connections and auto-switching to different DePIN networks!",
+                  },
+                ].map((item, index) => (
+                  <div
+                    className="frame-2-2__content-list-item"
+                    key={index}
+                    onMouseOver={() => setFrame22ActiveContentIndex(index)}
+                  >
+                    <div className="frame-2-2__content-list-item-description">
+                      {item.description}
                     </div>
-                  ))
-                }
+                    {frame22ActiveContentIndex === index ? (
+                      <Image
+                        src={item.content}
+                        width={2700}
+                        height={0}
+                        alt="content"
+                        className={
+                          "frame-2-2__content-list-item-content frame-2-2__content-list-item-content--" +
+                          (index + 1)
+                        }
+                      ></Image>
+                    ) : null}
+                  </div>
+                ))}
               </div>
             </div>
           </div>
           <div className="whole__y frame-2-3">
-            <Image width={3840} height={800} className="frame-2-3__title" alt="frame title" src="/images/index_new/pc/frame2_3_title.png"></Image>
+            <Image
+              width={3840}
+              height={800}
+              className="frame-2-3__title"
+              alt="frame title"
+              src="/images/index_new/pc/frame2_3_title.png"
+            ></Image>
             <div className="frame-2-3__content">
-              {
-                [frame23Step1, frame23Step2, frame23Step3].map((item, index) => {
-                  return <Image
-                  key={index}
-                  width={800}
-                  height={0}
-                  className={"frame-2-3__content-item frame-2-3__content-item--" + (index + 1)}
-                  alt="frame content"
-                  src={item}></Image>
-                }) 
-              }
+              {[frame23Step1, frame23Step2, frame23Step3].map((item, index) => {
+                return (
+                  <Image
+                    key={index}
+                    width={800}
+                    height={0}
+                    className={
+                      "frame-2-3__content-item frame-2-3__content-item--" +
+                      (index + 1)
+                    }
+                    alt="frame content"
+                    src={item}
+                  ></Image>
+                );
+              })}
             </div>
             <div className="frame-2-3__footer-box">
-              <Image width={3380} height={187} className="frame-2-3__footer-bg" alt="frame bg" src="/images/index_new/pc/frame2_3_footer_bg.png"></Image>
+              <Image
+                width={3380}
+                height={187}
+                className="frame-2-3__footer-bg"
+                alt="frame bg"
+                src="/images/index_new/pc/frame2_3_footer_bg.png"
+              ></Image>
               <div className="frame-2-3__footer-content">
                 <div className="frame-2-3__footer-content-button-box">
-                  <Image width={606} height={180} className="frame-2-3__footer-content-button-img" alt="frame bg" src="/images/index_new/pc/step_by_step_guide.png"></Image>
-                  <Image width={606} height={180} className="frame-2-3__footer-content-button-img--active" alt="frame bg" src="/images/index_new/pc/step_by_step_guide_active.png"></Image>
+                  <Image
+                    width={606}
+                    height={180}
+                    className="frame-2-3__footer-content-button-img"
+                    alt="frame bg"
+                    src="/images/index_new/pc/step_by_step_guide.png"
+                  ></Image>
+                  <Image
+                    width={606}
+                    height={180}
+                    className="frame-2-3__footer-content-button-img--active"
+                    alt="frame bg"
+                    src="/images/index_new/pc/step_by_step_guide_active.png"
+                  ></Image>
                 </div>
                 <div className="frame-2-3__footer-content-button-box">
-                  <Image width={400} height={180} className="frame-2-3__footer-content-button-img" alt="frame bg" src="/images/index_new/pc/faq.png"></Image>
-                  <Image width={400} height={180} className="frame-2-3__footer-content-button-img--active" alt="frame bg" src="/images/index_new/pc/faq_active.png"></Image>
+                  <Image
+                    width={400}
+                    height={180}
+                    className="frame-2-3__footer-content-button-img"
+                    alt="frame bg"
+                    src="/images/index_new/pc/faq.png"
+                  ></Image>
+                  <Image
+                    width={400}
+                    height={180}
+                    className="frame-2-3__footer-content-button-img--active"
+                    alt="frame bg"
+                    src="/images/index_new/pc/faq_active.png"
+                  ></Image>
                 </div>
               </div>
-            
             </div>
           </div>
         </div>
         <div className="whole__wrapper frame-3" ref={frame3Ref}>
           <div className="whole__y frame-3-1">
-            <Image width={3860} height={2316} className="frame-3-1__bg" alt="frame background" src="/images/index_new/pc/book-texture-bg.png"></Image>
-            <Image width={1092} height={256} className="frame-3-1__title" alt="frame title" src="/images/index_new/pc/frame2_product_title.png"></Image>
+            <Image
+              width={3860}
+              height={2316}
+              className="frame-3-1__bg"
+              alt="frame background"
+              src="/images/index_new/pc/book-texture-bg.png"
+            ></Image>
+            <Image
+              width={1092}
+              height={256}
+              className="frame-3-1__title"
+              alt="frame title"
+              src="/images/index_new/pc/frame2_product_title.png"
+            ></Image>
             <video
               className="frame-3-1__video"
               loop={true}
               autoPlay={true}
               muted={true}
             >
-              <source src="/images/index_new/pc/video_3_chrome.webm" type="video/mp4"></source>
-              <source src="/images/index_new/pc/video_3_safari.mp4" type="video/mp4"></source>
+              <source
+                src="/images/index_new/pc/video_3_chrome.webm"
+                type="video/mp4"
+              ></source>
+              <source
+                src="/images/index_new/pc/video_3_safari.mp4"
+                type="video/mp4"
+              ></source>
             </video>
-            <Image width={1918} height={800} className="frame-3-1__right1" alt="frame right" src="/images/index_new/pc/frame3_1_title.png"></Image>
+            <Image
+              width={1918}
+              height={800}
+              className="frame-3-1__right1"
+              alt="frame right"
+              src="/images/index_new/pc/frame3_1_title.png"
+            ></Image>
             {/* <Image width={1718} height={400} className="frame-2-1__right2" alt="frame right" src="/images/index_new/pc/frame2_right2.png"></Image> */}
             <div className="frame-3-1__right2-box">
-              <Image width={1338} height={1000} className="frame-3-1__right2" alt="frame right" src="/images/index_new/pc/frame3_right2.png"></Image>
+              <Image
+                width={1338}
+                height={1000}
+                className="frame-3-1__right2"
+                alt="frame right"
+                src="/images/index_new/pc/frame3_right2.png"
+              ></Image>
               <div className="frame-3-1__right2-button">
-                <Image width={606} height={180} className="frame-3-1__right2-button-image" alt="frame right" src="/images/index_new/pc/learn_how_it_works.png"></Image>
-                <Image width={606} height={180} className="frame-3-1__right2-button-image frame-3-1__right2-button-image--active" alt="frame right" src="/images/index_new/pc/learn_how_it_works_active.png"></Image>
+                <Image
+                  width={606}
+                  height={180}
+                  className="frame-3-1__right2-button-image"
+                  alt="frame right"
+                  src="/images/index_new/pc/learn_how_it_works.png"
+                ></Image>
+                <Image
+                  width={606}
+                  height={180}
+                  className="frame-3-1__right2-button-image frame-3-1__right2-button-image--active"
+                  alt="frame right"
+                  src="/images/index_new/pc/learn_how_it_works_active.png"
+                ></Image>
               </div>
             </div>
           </div>
           <div className="frame-3-2">
-            <Image width={3840} height={800} className="frame-3-2__title" alt="frame title" src="/images/index_new/pc/frame3_2_title.png"></Image>
-            <Image width={2490} height={692} className="frame-3-2__content" alt="frame title" src="/images/index_new/pc/frame3_2_content.png"></Image>
+            <Image
+              width={3840}
+              height={800}
+              className="frame-3-2__title"
+              alt="frame title"
+              src="/images/index_new/pc/frame3_2_title.png"
+            ></Image>
+            <Image
+              width={2490}
+              height={692}
+              className="frame-3-2__content"
+              alt="frame title"
+              src="/images/index_new/pc/frame3_2_content.png"
+            ></Image>
             <div className="frame-3-2__button-box">
-              <Image width={2490} height={692} className="frame-3-2__button-box-bg" alt="button" src="/images/index_new/pc/frame3_2_button_bg.png"></Image>
+              <Image
+                width={2490}
+                height={692}
+                className="frame-3-2__button-box-bg"
+                alt="button"
+                src="/images/index_new/pc/frame3_2_button_bg.png"
+              ></Image>
               <div className="frame-3-2__button-content">
                 <div className="frame-3-2__button">
-                  <Image width={606} height={180} className="frame-3-2__button-image" alt="frame right" src="/images/index_new/pc/check_comparison_depin_metrics.png"></Image>
-                  <Image width={606} height={180} className="frame-3-2__button-image frame-3-2__button-image--active" alt="frame right" src="/images/index_new/pc/check_comparison_depin_metrics_active.png"></Image>
+                  <Image
+                    width={606}
+                    height={180}
+                    className="frame-3-2__button-image"
+                    alt="frame right"
+                    src="/images/index_new/pc/check_comparison_depin_metrics.png"
+                  ></Image>
+                  <Image
+                    width={606}
+                    height={180}
+                    className="frame-3-2__button-image frame-3-2__button-image--active"
+                    alt="frame right"
+                    src="/images/index_new/pc/check_comparison_depin_metrics_active.png"
+                  ></Image>
                 </div>
               </div>
             </div>
           </div>
           <div className="whole__y frame-3-3">
             <div className="frame-3-3__img-box">
-              <Image width={1878} height={1691} className="frame-3-3__img" alt="compute" src="/images/index_new/pc/frame3_3_img.png"></Image>
-              <Image width={1878} height={1691} className="frame-3-3__img-cover" alt="compute cover" src="/images/index_new/pc/frame3_3_img_cover.png"></Image>
-              <Image width={216} height={203} className="frame-3-3__img-pointer" alt="pointer" src="/images/index_new/pc/point2.png"></Image>
+              <Image
+                width={1878}
+                height={1691}
+                className="frame-3-3__img"
+                alt="compute"
+                src="/images/index_new/pc/frame3_3_img.png"
+              ></Image>
+              <Image
+                width={1878}
+                height={1691}
+                className="frame-3-3__img-cover"
+                alt="compute cover"
+                src="/images/index_new/pc/frame3_3_img_cover.png"
+              ></Image>
+              <Image
+                width={216}
+                height={203}
+                className="frame-3-3__img-pointer"
+                alt="pointer"
+                src="/images/index_new/pc/point2.png"
+              ></Image>
             </div>
           </div>
           <div className="whole__y frame-3-4">
             <div className="frame-3-4__content-box">
-              <Image width={3840} height={800} className="frame-3-4__title" alt="frame title" src="/images/index_new/pc/frame3_4_title.png"></Image>
-              <Image width={2016} height={981} className="frame-3-4__content" alt="frame title" src="/images/index_new/pc/frame3_4_content.png"></Image>
+              <Image
+                width={3840}
+                height={800}
+                className="frame-3-4__title"
+                alt="frame title"
+                src="/images/index_new/pc/frame3_4_title.png"
+              ></Image>
+              <Image
+                width={2016}
+                height={981}
+                className="frame-3-4__content"
+                alt="frame title"
+                src="/images/index_new/pc/frame3_4_content.png"
+              ></Image>
               {/* <div className="frame-3-4__button-box"> */}
-                <Image width={2490} height={692} className="frame-3-4__button" alt="button" src="/images/index_new/pc/frame3_4_button.png"></Image>
+              <Image
+                width={2490}
+                height={692}
+                className="frame-3-4__button"
+                alt="button"
+                src="/images/index_new/pc/frame3_4_button.png"
+              ></Image>
               {/* </div> */}
             </div>
           </div>
         </div>
         <div className="whole__x frame-4">
-          <Image width={1439} height={239} className="frame-4__title" alt="button" src="/images/index_new/pc/frame4_title.png"></Image>
+          <Image
+            width={1439}
+            height={239}
+            className="frame-4__title"
+            alt="button"
+            src="/images/index_new/pc/frame4_title.png"
+          ></Image>
           <div className="frame-4__card-list">
             <div className="frame-4__card-box">
               <div className="frame-4__card">
-                <Image width={800} height={1200} className="frame-4__card-img" alt="button" src="/images/index_new/pc/frame4_content1.png"></Image>
+                <Image
+                  width={800}
+                  height={1200}
+                  className="frame-4__card-img"
+                  alt="button"
+                  src="/images/index_new/pc/frame4_content1.png"
+                ></Image>
                 <div className="frame-4__card-mix"></div>
               </div>
-              <Image width={620} height={550} className="frame-4__card-text" alt="button" src="/images/index_new/pc/frame4_text1.png"></Image>
+              <Image
+                width={620}
+                height={550}
+                className="frame-4__card-text"
+                alt="button"
+                src="/images/index_new/pc/frame4_text1.png"
+              ></Image>
             </div>
             <div className="frame-4__card-box">
               <div className="frame-4__card">
-                  <Image width={800} height={1200} className="frame-4__card-img" alt="button" src="/images/index_new/pc/frame4_content2.png"></Image>
+                <Image
+                  width={800}
+                  height={1200}
+                  className="frame-4__card-img"
+                  alt="button"
+                  src="/images/index_new/pc/frame4_content2.png"
+                ></Image>
                 <div className="frame-4__card-mix"></div>
               </div>
-              <Image width={620} height={490} className="frame-4__card-text" alt="button" src="/images/index_new/pc/frame4_text2.png"></Image>
+              <Image
+                width={620}
+                height={490}
+                className="frame-4__card-text"
+                alt="button"
+                src="/images/index_new/pc/frame4_text2.png"
+              ></Image>
             </div>
             <div className="frame-4__card-box">
               <div className="frame-4__card">
-                <Image width={800} height={1200} className="frame-4__card-img" alt="button" src="/images/index_new/pc/frame4_content3.png"></Image>
+                <Image
+                  width={800}
+                  height={1200}
+                  className="frame-4__card-img"
+                  alt="button"
+                  src="/images/index_new/pc/frame4_content3.png"
+                ></Image>
                 <div className="frame-4__card-mix"></div>
               </div>
-              <Image width={620} height={610} className="frame-4__card-text" alt="button" src="/images/index_new/pc/frame4_text3.png"></Image>
+              <Image
+                width={620}
+                height={610}
+                className="frame-4__card-text"
+                alt="button"
+                src="/images/index_new/pc/frame4_text3.png"
+              ></Image>
             </div>
           </div>
-
         </div>
         <div className="whole__x frame-5">
-          <Image width={865} height={239} className="frame-5__title" alt="button" src="/images/index_new/pc/frame5_title.png"></Image>
+          <Image
+            width={865}
+            height={239}
+            className="frame-5__title"
+            alt="button"
+            src="/images/index_new/pc/frame5_title.png"
+          ></Image>
           <div className="frame-5__content">
-            <Image width={3240} height={1382} className="frame-5__content-bg" alt="button" src="/images/index_new/pc/frame5_content_bg.png"></Image>
-            <Image width={5641} height={682} className="frame-5__content-main" alt="button" src="/images/index_new/pc/frame5_content.png"></Image>
+            <Image
+              width={3240}
+              height={1382}
+              className="frame-5__content-bg"
+              alt="button"
+              src="/images/index_new/pc/frame5_content_bg.png"
+            ></Image>
+            <Image
+              width={4693}
+              height={694}
+              className="frame-5__content-main"
+              alt="button"
+              src="/images/index_new/pc/frame5_content.png"
+            ></Image>
           </div>
         </div>
         <div className="whole__x frame-6">
-          <Image width={2119} height={239} className="frame-6__title" alt="button" src="/images/index_new/pc/frame6_title.png"></Image>
+          <Image
+            width={2119}
+            height={239}
+            className="frame-6__title"
+            alt="button"
+            src="/images/index_new/pc/frame6_title.png"
+          ></Image>
           <div className="frame-6__content" ref={frame6Ref}>
             <div className="frame-6__content-box">
-              <Image ref={frame6BgRef} width={3240} height={3267} className="frame-6__content-bg" alt="button" src="/images/index_new/pc/frame6_bg.png"></Image>
-              <Image ref={frame6ContentRef} width={2330} height={2011} className="frame-6__content-main" alt="button" src="/images/index_new/pc/frame6_content.png"></Image>
+              <Image
+                ref={frame6BgRef}
+                width={3240}
+                height={3267}
+                className="frame-6__content-bg"
+                alt="button"
+                src="/images/index_new/pc/frame6_bg.png"
+              ></Image>
+              <Image
+                ref={frame6ContentRef}
+                width={2330}
+                height={2011}
+                className="frame-6__content-main"
+                alt="button"
+                src="/images/index_new/pc/frame6_content.png"
+              ></Image>
             </div>
           </div>
         </div>
@@ -458,36 +909,147 @@ export default function PcNewDemo() {
           <div className="whole frame-5-1">5-1</div>
         </div> */}
         <div className="whole__x footer">
-          <Image  width={3834} height={1891} className="footer__bg" alt="footer bg" src="/images/index_new/pc/footer_bg.png"></Image>
+          <Image
+            width={3848}
+            height={1891}
+            className="footer__bg"
+            alt="footer bg"
+            src="/images/index_new/pc/footer_bg.png"
+          ></Image>
           <div className="footer__content">
             <div className="footer__content-nav-box">
-              <Image  width={952} height={637} className="footer__content-nav-bg" alt="footer bg" src="/images/index_new/pc/footer_content_bg.png"></Image>
+              <Image
+                width={952}
+                height={637}
+                className="footer__content-nav-bg"
+                alt="footer bg"
+                src="/images/index_new/pc/footer_content_bg.png"
+              ></Image>
               <div className="footer__content-nav">
-                {
-                  [{
+                {[
+                  {
                     icon: footerTwitter,
-                    activeIcon: footerTwitterActive
-                  }, {
+                    activeIcon: footerTwitterActive,
+                    url: Twitter,
+                  },
+                  {
                     icon: footerReddit,
-                    activeIcon: footerRedditActive
-                  }, {
+                    activeIcon: footerRedditActive,
+                    url: Medium
+                  },
+                  {
                     icon: footerDiscord,
-                    activeIcon: footerDiscordActive
-                  }].map((item, index) => {
-                    return <div className="footer__content-item" key={index}>
-                      <Image  width={160} height={160} className="footer__content-item-img" alt="nav icon" src={item.icon}></Image>
-                      <Image  width={160} height={160} className="footer__content-item-img--active" alt="nav icon" src={item.activeIcon}></Image>
-
+                    activeIcon: footerDiscordActive,
+                    url: Discord
+                  },
+                ].map((item, index) => {
+                  return (
+                    <div className="footer__content-item" key={index} onClick={() => {
+                      window.open(item.url, '_blank')
+                    }}>
+                      <Image
+                        width={160}
+                        height={160}
+                        className="footer__content-item-img"
+                        alt="nav icon"
+                        src={item.icon}
+                      ></Image>
+                      <Image
+                        width={160}
+                        height={160}
+                        className="footer__content-item-img--active"
+                        alt="nav icon"
+                        src={item.activeIcon}
+                      ></Image>
                     </div>
-                  })
-                }
-                
+                  );
+                })}
               </div>
+            </div>
+            <div className="footer__nav-box">
+              {[
+                {
+                  title: "PRODUCT",
+                  list: [
+                    {
+                      label: "DePIN Liquidity Hook Money Market(SOON)",
+                      url: "",
+                    },
+                    {
+                      label: "DePIN Service Hook All-in-one SDK(SOON)",
+                      url: "",
+                    },
+                    {
+                      label: "PINGPONG Gold Miner (4 fun only)",
+                      url: "",
+                    },
+                  ],
+                },
+                {
+                  title: "Community",
+                  list: [
+                    {
+                      label: "Discord",
+                      url: Discord,
+                    },
+                    {
+                      label: "Medium",
+                      url: Medium,
+                    },
+                    {
+                      label: "X",
+                      url: Twitter,
+                    },
+                  ],
+                },
+                {
+                  title: "About",
+                  list: [
+                    {
+                      label: "Whitepaper",
+                      url: WhitePaper,
+                    },
+                    {
+                      label: "Help Center",
+                      url: Discord,
+                    },
+                    {
+                      label: "FAQ",
+                      url: "",
+                    },
+                  ],
+                },
+              ].map((item) => {
+                return (
+                  <div className="footer__nav-item" key={item.title}>
+                    <div className="footer__nav-item-title">{item.title}</div>
+                    <div className="footer__nav-item-content">
+                      {item.list.map((_item) => {
+                        return (
+                          <div
+                            className="footer__nav-item-content-item"
+                            key={_item.label}
+                            onClick={() => {
+                              if (_item.url) {
+                                window.open(_item.url, "_blank");
+                              }
+                            }}
+                          >
+                            {_item.label}
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
           <div className="footer__bottom">
             <div className="footer__bottom-left">PingPong</div>
-            <div className="footer__bottom-right">THe Largest DEPIN LEquidity & Service Aggregator</div>
+            <div className="footer__bottom-right">
+              THe Largest DEPIN LEquidity & Service Aggregator
+            </div>
           </div>
         </div>
       </div>
