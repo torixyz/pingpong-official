@@ -587,7 +587,7 @@ export default function PcNewDemo() {
                 src="/images/index_new/pc/frame2_3_footer_bg.png"
               ></Image>
               <div className="frame-2-3__footer-content">
-                <div className="frame-2-3__footer-content-button-box">
+                <div className="frame-2-3__footer-content-button-box" onClick={() => toast('Coming soon...')}>
                   <Image
                     width={606}
                     height={180}
@@ -603,7 +603,7 @@ export default function PcNewDemo() {
                     src="/images/index_new/pc/step_by_step_guide_active.png"
                   ></Image>
                 </div>
-                <div className="frame-2-3__footer-content-button-box">
+                <div className="frame-2-3__footer-content-button-box" onClick={() => toast('Coming soon...')}>
                   <Image
                     width={400}
                     height={180}
@@ -670,7 +670,7 @@ export default function PcNewDemo() {
                 alt="frame right"
                 src="/images/index_new/pc/frame3_right2.png"
               ></Image>
-              <div className="frame-3-1__right2-button">
+              <div className="frame-3-1__right2-button" onClick={() => window.open('https://grafana.pingpong.tech/d/cdgugvrew87i8b/depin?orgId=1&refresh=5s&from=1712586106739&to=1712586406739', '_blank')}>
                 <Image
                   width={606}
                   height={180}
@@ -712,7 +712,7 @@ export default function PcNewDemo() {
                 src="/images/index_new/pc/frame3_2_button_bg.png"
               ></Image>
               <div className="frame-3-2__button-content">
-                <div className="frame-3-2__button">
+                <div className="frame-3-2__button" onClick={() => window.open('https://grafana.pingpong.tech/d/cdgugvrew87i8b/depin?orgId=1&refresh=5s&from=1712586106739&to=1712586406739', '_blank')}>
                   <Image
                     width={606}
                     height={180}
@@ -774,6 +774,7 @@ export default function PcNewDemo() {
               ></Image>
               {/* <div className="frame-3-4__button-box"> */}
               <Image
+                onClick={() => window.open('http://localhost:3000/PingPongWhitepaperV0.1.2.pdf', '_blank')}
                 width={2490}
                 height={692}
                 className="frame-3-4__button"
@@ -1034,6 +1035,8 @@ export default function PcNewDemo() {
                             onClick={() => {
                               if (_item.url) {
                                 window.open(_item.url, "_blank");
+                              } else {
+                                toast('Coming soon...')
                               }
                             }}
                           >
