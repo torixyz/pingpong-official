@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@atlaskit/modal-dialog": "^12.10.10",
     "@gsap/react": "^2.1.0",
     "animate.css": "^4.1.1",
     "gsap": "^3.12.5",
