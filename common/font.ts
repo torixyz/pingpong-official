@@ -13,7 +13,7 @@ export const LoveYaLikeASister = localFont({
   variable: "--font-LoveYaLikeASister",
 });
 
-export const MontserratFont = Montserrat({subsets: ['latin'], weight: ['400', '700']})
+export const MontserratFont = Montserrat({subsets: ['latin'], weight: ['400', '700', '800']})
 
 export const Gobold = localFont({
   src: [

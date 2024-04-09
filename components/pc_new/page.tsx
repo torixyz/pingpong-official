@@ -36,6 +36,7 @@ import footerDiscord from '@/../public/images/index_new/pc/footer_discord.png'
 import footerDiscordActive from '@/../public/images/index_new/pc/footer_discord_active.png'
 import {Inter} from "next/font/google";
 import {toast} from "sonner";
+import {WHITEPAPER_LINK} from "@/config/link";
 
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
@@ -774,7 +775,7 @@ export default function PcNewDemo() {
               ></Image>
               {/* <div className="frame-3-4__button-box"> */}
               <Image
-                onClick={() => window.open('http://localhost:3000/PingPongWhitepaperV0.1.2.pdf', '_blank')}
+                onClick={() => window.open(WHITEPAPER_LINK, '_blank')}
                 width={2490}
                 height={692}
                 className="frame-3-4__button"
@@ -984,7 +985,7 @@ export default function PcNewDemo() {
                     },
                     {
                       label: "PINGPONG Gold Miner (4 fun only)",
-                      url: "",
+                      url: "https://goldminer.pingpong.build",
                     },
                   ],
                 },
