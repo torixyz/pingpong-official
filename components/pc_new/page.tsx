@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Gobold } from "../../common/font";
+import {Gobold, MontserratFont} from "../../common/font";
 import Image from "next/image";
 import "animate.css";
 import "./page.scss";
@@ -15,8 +15,8 @@ import products from '@/../public/images/index_new/pc/products.png'
 import productsActive from '@/../public/images/index_new/pc/products-active.png'
 import about from '@/../public/images/index_new/pc/about.png'
 import aboutActive from '@/../public/images/index_new/pc/about-active.png'
-import whitepaper from '@/../public/images/index_new/pc/whitepaper.png'
-import whitepaperActive from '@/../public/images/index_new/pc/whitepaper-active.png'
+import community from '@/../public/images/index_new/pc/community.png'
+import communityActive from '@/../public/images/index_new/pc/community-active.png'
 import launch from '@/../public/images/index_new/pc/launch.png'
 import launchActive from '@/../public/images/index_new/pc/launch-active.png'
 
@@ -34,6 +34,8 @@ import footerReddit from '@/../public/images/index_new/pc/footer_reddit.png'
 import footerRedditActive from '@/../public/images/index_new/pc/footer_reddit_active.png'
 import footerDiscord from '@/../public/images/index_new/pc/footer_discord.png'
 import footerDiscordActive from '@/../public/images/index_new/pc/footer_discord_active.png'
+import {Inter} from "next/font/google";
+import {toast} from "sonner";
 
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
@@ -66,7 +68,7 @@ export default function PcNewDemo() {
       }
     });
     resizeObserver.observe(frame2Ref.current);
-    return () => resizeObserver.disconnect(); // clean up 
+    return () => resizeObserver.disconnect(); // clean up
   }, []);
   useEffect(() => {
     if (!frame3Ref.current) return;
@@ -78,7 +80,7 @@ export default function PcNewDemo() {
       }
     });
     resizeObserver.observe(frame3Ref.current);
-    return () => resizeObserver.disconnect(); // clean up 
+    return () => resizeObserver.disconnect(); // clean up
   }, []);
 
 
@@ -95,7 +97,7 @@ export default function PcNewDemo() {
       }
     });
     resizeObserver.observe(frame6Ref.current);
-    return () => resizeObserver.disconnect(); // clean up 
+    return () => resizeObserver.disconnect(); // clean up
   }, []);
 
 
@@ -103,7 +105,7 @@ export default function PcNewDemo() {
     // gsap code here...
     // frame2
     // console.log('frame2Ref', frame2Ref.current, frame2Ref.current?.scrollWidth, frame2Ref.current?.offsetHeight)
-    
+
     console.log('===3', -frame2Width + document.documentElement.clientWidth)
     gsap.to(".frame-2", {
       x: frame2Width ? (-frame2Width + document.documentElement.clientWidth) + 'px' : "-210vw",
@@ -242,15 +244,15 @@ export default function PcNewDemo() {
               link: "https://pingpong.finance/launch",
             },
             {
-              name: "about",
-              src: about,
-              activeSrc: aboutActive,
+              name: "community",
+              src: community,
+              activeSrc: communityActive,
               link: "https://pingpong.finance/about",
             },
             {
-              name: "white paper",
-              src: whitepaper,
-              activeSrc: whitepaperActive,
+              name: "about",
+              src: about,
+              activeSrc: aboutActive,
               link: "https://pingpong.finance/whitepaper",
             },
           ].map((item, index) => (
@@ -386,7 +388,7 @@ export default function PcNewDemo() {
             </div>
           ))}
         </div>
-        <div className="index__header-launch">
+        <div className="index__header-launch" onClick={() => toast('Coming soon...')}>
           <Image
             className="index__header-launch-image"
             src={launch}
@@ -429,7 +431,7 @@ export default function PcNewDemo() {
               depin mining aggregator - light node beta version released! 🚀
               </div>
               <div className="frame-1__footer-content-button-box">
-                <div className="frame-1__footer-content-button">
+                <div className={`frame-1__footer-content-button ${MontserratFont.className}`}>
                 Unlock #DePINFi with PINGPONG!
                   <Image
                     width={216}
@@ -508,7 +510,7 @@ export default function PcNewDemo() {
               src="/images/index_new/pc/frame2_2_title.png"
             ></Image>
             <div className="frame-2-2__content">
-              <div className="frame-2-2__content-list">
+              <div className={`frame-2-2__content-list ${MontserratFont.className}`}>
                 {[
                   {
                     content: frame22Content1,
@@ -966,7 +968,7 @@ export default function PcNewDemo() {
                 })}
               </div>
             </div>
-            <div className="footer__nav-box">
+            <div className={`footer__nav-box ${MontserratFont.className}`}>
               {[
                 {
                   title: "PRODUCT",
@@ -986,7 +988,7 @@ export default function PcNewDemo() {
                   ],
                 },
                 {
-                  title: "Community",
+                  title: "COMMUNITY",
                   list: [
                     {
                       label: "Discord",
@@ -1003,7 +1005,7 @@ export default function PcNewDemo() {
                   ],
                 },
                 {
-                  title: "About",
+                  title: "ABOUT",
                   list: [
                     {
                       label: "Whitepaper",
@@ -1045,9 +1047,9 @@ export default function PcNewDemo() {
               })}
             </div>
           </div>
-          <div className="footer__bottom">
-            <div className="footer__bottom-left">PingPong</div>
-            <div className="footer__bottom-right">
+          <div className={`footer__bottom font-bold ${MontserratFont.className}`}>
+            <div className="footer__bottom-left">© PINGPONG</div>
+            <div className="footer__bottom-right uppercase">
               THe Largest DEPIN LEquidity & Service Aggregator
             </div>
           </div>

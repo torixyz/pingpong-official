@@ -58,20 +58,20 @@
 }
 .index__header-nav-dropdown-1-bg {
   max-width: initial;
-  width: 514px;
+  width: 420px;
   height: auto;
 }
 .index__header-nav-dropdown-1-button {
   position: absolute;
-  left: 52px;
+  left: 43px;
   bottom: 30px;
   width: auto;
-  height: 63px;;
+  height: 52px;;
   cursor: pointer;
 }
 .index__header-nav-dropdown-2-bg {
   max-width: initial;
-  width: 400px;
+  width: 340px;
   height: auto;
 }
 .index__header-nav-dropdown-2-button1 {
@@ -79,23 +79,23 @@
   left: 52px;
   top: 48px;
   width: auto;
-  height: 48px;;
+  height: 42px;;
   cursor: pointer;
 }
 .index__header-nav-dropdown-2-button2 {
   position: absolute;
   left: 52px;
-  top: 112px;
+  top: 102px;
   width: auto;
-  height: 48px;;
+  height: 42px;;
   cursor: pointer;
 }
 .index__header-nav-dropdown-2-button3 {
   position: absolute;
   left: 52px;
-  top: 176px;
+  top: 156px;
   width: auto;
-  height: 48px;;
+  height: 42px;;
   cursor: pointer;
 }
 .index__header-nav-item-image {
@@ -159,7 +159,7 @@
 .whole {
   width: 100vw;
   height: 100vh;
-  
+
 }
 .whole__x {
   width: 100vw;
@@ -217,6 +217,7 @@
   align-items: center;
 }
 .frame-1__footer-content-button {
+  font-weight: 700;
   position: relative;
   padding: 15px 30px;
   background-color: rgba(61, 61, 61, 1);
@@ -239,7 +240,7 @@
     top: -20px;
     right: -80px;
     opacity: 1;
-  
+
   }
 }
 // frame2
@@ -321,6 +322,7 @@
   max-width: px2vh(1233);
 }
 .frame-2-2__content-list {
+  font-weight: bold;
   position: relative;
   &::after {
     content: '';
@@ -411,7 +413,7 @@
 .frame-2-3__footer-bg {
   width: auto;
   height: px2vh(93);
-  
+
 }
 .frame-2-3__footer-content {
   position: absolute;
@@ -604,7 +606,7 @@
   min-width: initial;
 }
 .frame-3-3__img-box {
-  
+
   position: relative;
   cursor: pointer;
 }
@@ -945,8 +947,9 @@
 }
 .footer__bottom-left,
 .footer__bottom-right {
+  text-transform: uppercase;
   position: absolute;
-  
+
   top: 22px;
   font-size: 20px;
   line-height: 24px;

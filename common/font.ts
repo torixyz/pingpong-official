@@ -1,4 +1,6 @@
 import localFont from "next/font/local";
+import { Montserrat } from "next/font/google";
+
 
 export const LoveYaLikeASister = localFont({
   src: [
@@ -11,16 +13,7 @@ export const LoveYaLikeASister = localFont({
   variable: "--font-LoveYaLikeASister",
 });
 
-export const Montserrat = localFont({
-  src: [
-    {
-      path: "../public/font/Montserrat/Montserrat-Regular.ttf",
-      weight: "400",
-      style: "normal",
-    },
-  ],
-  variable: "--font-Montserrat",
-});
+export const MontserratFont = Montserrat({subsets: ['latin'], weight: ['400', '700']})
 
 export const Gobold = localFont({
   src: [
