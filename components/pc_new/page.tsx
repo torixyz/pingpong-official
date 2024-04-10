@@ -9,7 +9,7 @@ import Image from "next/image";
 import "animate.css";
 import "./page.scss";
 
-import { Twitter, Discord, WhitePaper, Medium } from "../../common/constants";
+import { Twitter, Discord, WhitePaper, Medium, HelpCenter } from "../../common/constants";
 
 import products from '@/../public/images/index_new/pc/products.png'
 import productsActive from '@/../public/images/index_new/pc/products-active.png'
@@ -358,7 +358,7 @@ export default function PcNewDemo() {
                     alt={"dropdown"}
                     className="index__header-nav-dropdown-2-button1"
                     onClick={(e) => {
-                      window.open(Discord, '_blank');
+                      window.open(HelpCenter, '_blank');
                       e.stopPropagation();
                     }}
                   ></Image>
@@ -1015,7 +1015,7 @@ export default function PcNewDemo() {
                     },
                     {
                       label: "Help Center",
-                      url: Discord,
+                      url: HelpCenter,
                     },
                     {
                       label: "FAQ",
