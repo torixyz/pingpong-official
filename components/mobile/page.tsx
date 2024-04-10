@@ -2,10 +2,13 @@
 import Image from "next/image";
 import "./page.scss";
 import { WHITEPAPER_LINK } from "@/config/link";
+import {toast} from "sonner";
 
 import { useState } from "react";
 
 export default function Mobile() {
+  const comingSoonToast = () => toast('Coming soon...')
+  const openInBlank = (url: string) => window.open(url, '_blank')
   const [isModalOpen, setModalOpen] = useState(false);
   const toggleMenu = function () {
     const el = document.getElementById("js__mobile-header-box");
@@ -185,13 +188,17 @@ export default function Mobile() {
         alt="content"
         src="/images/index_new/mobile/1_04.png"
       ></Image>
-      <Image
-        width={1179}
-        height={1769}
-        className="mobile__common-img"
-        alt="content"
-        src="/images/index_new/mobile/1_05.png"
-      ></Image>
+      <div className="mobile__common-box">
+        <Image
+          width={1179}
+          height={1769}
+          className="mobile__common-img"
+          alt="content"
+          src="/images/index_new/mobile/1_05.png"
+        ></Image>
+        <div className="mobile__1_05_button" onClick={() => comingSoonToast()}></div>
+        <div className="mobile__1_05_button2" onClick={() => comingSoonToast()}></div>
+      </div>
       <Image
         width={1179}
         height={1826}
@@ -199,13 +206,17 @@ export default function Mobile() {
         alt="content"
         src="/images/index_new/mobile/2_01.png"
       ></Image>
-      <Image
-        width={1179}
-        height={1197}
-        className="mobile__common-img"
-        alt="content"
-        src="/images/index_new/mobile/2_02.png"
-      ></Image>
+      <div className="mobile__common-box">
+
+        <Image
+          width={1179}
+          height={1197}
+          className="mobile__common-img"
+          alt="content"
+          src="/images/index_new/mobile/2_02.png"
+        ></Image>
+        <div className="mobile__2_02_button" onClick={() => comingSoonToast()}></div>
+      </div>
       <Image
         width={1179}
         height={1379}
@@ -213,20 +224,28 @@ export default function Mobile() {
         alt="content"
         src="/images/index_new/mobile/2_03.png"
       ></Image>
-      <Image
-        width={1179}
-        height={1263}
-        className="mobile__common-img"
-        alt="content"
-        src="/images/index_new/mobile/2_04.png"
-      ></Image>
-      <Image
-        width={1179}
-        height={2021}
-        className="mobile__common-img"
-        alt="content"
-        src="/images/index_new/mobile/2_05.png"
-      ></Image>
+      <div className="mobile__common-box">
+
+        <Image
+          width={1179}
+          height={1263}
+          className="mobile__common-img"
+          alt="content"
+          src="/images/index_new/mobile/2_04.png"
+        ></Image>
+        <div className="mobile__2_04_button" onClick={() => comingSoonToast()}></div>
+      </div>
+      <div className="mobile__common-box">
+
+        <Image
+          width={1179}
+          height={2021}
+          className="mobile__common-img"
+          alt="content"
+          src="/images/index_new/mobile/2_05.png"
+        ></Image>
+        <div className="mobile__2_05_button" onClick={() => comingSoonToast()}></div>
+      </div>
       <Image
         width={1179}
         height={1986}
