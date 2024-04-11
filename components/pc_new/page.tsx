@@ -36,7 +36,7 @@ import footerDiscord from '@/../public/images/index_new/pc/footer_discord.png'
 import footerDiscordActive from '@/../public/images/index_new/pc/footer_discord_active.png'
 import {Inter} from "next/font/google";
 import {toast} from "sonner";
-import {WHITEPAPER_LINK} from "@/config/link";
+import {HARVESTER_URL, WHITEPAPER_LINK} from "@/config/link";
 
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
@@ -389,7 +389,7 @@ export default function PcNewDemo() {
             </div>
           ))}
         </div>
-        <div className="index__header-launch" onClick={() => toast('Coming soon...')}>
+        <a className="index__header-launch" href={HARVESTER_URL} target={'_blank'}>
           <Image
             className="index__header-launch-image"
             src={launch}
@@ -400,7 +400,7 @@ export default function PcNewDemo() {
             src={launchActive}
             alt="launch"
           ></Image>
-        </div>
+        </a>
       </div>
       <div className={"page " + Gobold.className}>
         <div className="whole-x frame-1">
@@ -431,7 +431,7 @@ export default function PcNewDemo() {
               <div className="frame-1__footer-content-description">
               depin mining aggregator - light node beta version released! 🚀
               </div>
-              <div className="frame-1__footer-content-button-box">
+              <a className="frame-1__footer-content-button-box" href={HARVESTER_URL} target={'_blank'}>
                 <div className={`frame-1__footer-content-button ${MontserratFont.className}`}>
                 Unlock #DePINFi with PINGPONG!
                   <Image
@@ -442,7 +442,7 @@ export default function PcNewDemo() {
                     className="frame-1__footer-content-button-pointer"
                   ></Image>
                 </div>
-              </div>
+              </a>
             </div>
           </div>
         </div>
