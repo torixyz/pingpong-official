@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "PINGPONG",
-  description: "The largest DePIN liquidity&service aggregator.",
+  description: "// building world's 1st DePINFi money market.",
 };
 
 export default function RootLayout({
