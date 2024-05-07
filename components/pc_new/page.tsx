@@ -671,7 +671,7 @@ export default function PcNewDemo() {
                 alt="frame right"
                 src="/images/index_new/pc/frame3_right2.png"
               ></Image>
-              <div className="frame-3-1__right2-button" onClick={() => window.open('https://grafana.pingpong.tech/d/cdgugvrew87i8b/depin?orgId=1&refresh=5s&from=1712586106739&to=1712586406739', '_blank')}>
+              <div className="frame-3-1__right2-button" onClick={() => toast('Coming soon...')}>
                 <Image
                   width={606}
                   height={180}
@@ -713,7 +713,7 @@ export default function PcNewDemo() {
                 src="/images/index_new/pc/frame3_2_button_bg.png"
               ></Image>
               <div className="frame-3-2__button-content">
-                <div className="frame-3-2__button" onClick={() => window.open('https://grafana.pingpong.tech/d/cdgugvrew87i8b/depin?orgId=1&refresh=5s&from=1712586106739&to=1712586406739', '_blank')}>
+                <div className="frame-3-2__button" onClick={() => toast('Coming soon...')}>
                   <Image
                     width={606}
                     height={180}
